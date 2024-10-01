@@ -1,0 +1,457 @@
+    /* css body */
+    body {
+        margin: 5px;
+        font-family: 'Jost', sans-serif;
+    }
+
+    /* css navbar */
+    .navbar {
+        width: 100vw;
+        max-width: 100%;
+        position: fixed; 
+        top: 0;
+        left: 0; 
+        background-color: #ffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 20px;
+        box-sizing: border-box;
+        z-index: 1000; 
+    }
+
+    .navbar a {
+        color:#010851;
+        text-decoration: none;
+        padding: 14px 20px;
+    }
+    .navbar a:hover {
+        background-color: #dddddd65;
+        color: #ED80FD;
+    }
+
+    .logo {
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .logo img{
+        width: 30px;    
+        height: auto;
+        margin-left: -25px;
+    }
+
+    .menu a {
+        font-size: 18px;
+        margin: 0 15px;
+    }
+
+    .menu1 a {
+        font-size: 13px; 
+        margin-left: 10px;
+       
+    }
+
+    .menu2 {
+        font-size: 15px; 
+        padding: 5px 10px;
+        margin-right: 10px;
+        background-color: #ee9ae627; 
+        border: 2px solid #01085131; 
+        border-radius: 5px; 
+        text-decoration: none; 
+        color: #010851; 
+    }
+    
+
+    .icon{
+        margin-right: 5px;  
+    }
+
+    /* css konten utama */
+    .content {
+        padding-top: 100px;
+    }
+
+    .content-box {
+        background-color: white; 
+        padding: 10px; 
+        padding-top: 80px; 
+        box-sizing: border-box; 
+        position: relative; 
+        border-radius: 8px;
+        width: 95vw; 
+        height: calc(100vh - 80px); 
+    }
+    
+    /* css konten utama di inner box buat isi h1,h2,h3,p,dan img */
+    .inner-box {
+        background: linear-gradient(30deg, #5961F9,#EE9AE5); 
+        padding: 20px; 
+        border-radius: 25px 25px 125px 25px; 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+        width: 100%; 
+        height: 100%;
+        position: relative; 
+    }
+    
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0); 
+        }
+        50% {
+            transform: translateY(-20px); 
+        }
+    }
+    
+    .inner-box img {
+        position: absolute; 
+        left: 600px; 
+        top: 20px; 
+        animation: bounce 6s infinite;
+    }
+    
+    
+    .inner-box h1{
+        font-size: 35px;
+        color: white;
+        margin-left: 15px;
+    }
+    .inner-box h2{
+        font-size: 20px;
+        color: white;
+        margin-left: 15px;
+    }
+
+    .inner-box h3{
+        color: white;
+        margin-left: 15px;
+        padding: 10px; 
+        border: 2px solid #ffffff0c; 
+        border-radius: 8px; 
+        background-color: #ffffff1c; 
+        display: inline-block;
+    }
+    .inner-box p{
+        font-size: 15px;
+        color: white;
+        margin-left: 15px;
+    }
+    
+    /* css kenapa pilih kami */
+    .benefits {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 50px;
+        padding: 20px 40px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+    }
+    
+    .benefit-content {
+        flex: 1;
+        margin-right: 40px;
+    }
+    
+    .benefit-content h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #010851;
+    }
+    
+    .benefit-content p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #333333;
+    }
+    
+    .benefit-boxes {
+        display: flex;
+        flex: 2;
+        justify-content: space-around;
+    }
+    
+    .benefit-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: #ffffff;
+        border-radius: 15px;
+        padding: 20px;
+        margin: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .benefit-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    .benefit-box img {
+        width: 100px;
+        height: auto;
+        margin-bottom: 15px;
+    }
+    
+    .benefit-box h3 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #010851;
+    }
+    
+    /* Responsif untuk layar kecil */
+    @media (max-width: 768px) {
+        .benefits {
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 20px;
+        }
+    
+        .benefit-content {
+            margin-right: 0;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+    
+        .benefit-boxes {
+            flex-direction: column;
+        }
+    
+        .benefit-box {
+            width: 90%;
+            margin: 10px 0;
+        }
+    }
+
+    /* css about-us */
+    .about-us {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 50px 40px;
+        background: linear-gradient(135deg, #E2A5E2, #D6EBFF);
+        border-radius: 30px;
+        margin-top: 50px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .about-content {
+        flex: 1;
+        margin-right: 40px;
+        color: #ffffff;
+    }
+    
+    .about-content h2 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #ffffff;
+    }
+    
+    .about-content p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .about-image {
+        flex: 1;
+        text-align: right;
+    }
+    
+    .about-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 20px;
+    }
+    
+    /* Responsif untuk layar kecil */
+    @media (max-width: 768px) {
+        .about-us {
+            flex-direction: column;
+            text-align: center;
+            padding: 20px 20px;
+        }
+    
+        .about-content {
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
+    
+        .about-image {
+            text-align: center;
+        }
+    
+        .about-image img {
+            width: 80%;
+        }
+    }
+    
+    /* css fitur kelas */
+/* Gaya untuk container utama */
+.container-harga {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+/* Gaya untuk judul dan subjudul */
+.judul-seksi {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(7, 7, 100);
+}
+
+.subjudul-seksi {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Gaya untuk container card */
+.card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap; /* Agar kartu-kartu membungkus ke baris baru jika tidak cukup ruang */
+    gap: 20px; /* Jarak antar kartu */
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Gaya untuk masing-masing card */
+.card-harga {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgb(250, 20, 250);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+    width: 300px; /* Lebar tetap untuk setiap kartu */
+    box-sizing: border-box;
+}
+
+.card-harga:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgb(250, 20, 250);
+}
+
+.judul-paket {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: rgb(7, 7, 100);
+}
+
+.harga {
+    font-size: 2em;
+    color: rgb(210, 100, 223);
+    margin: 10px 0;
+}
+
+.fitur {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.fitur li {
+    margin: 10px 0;
+    color: rgb(7, 7, 100);
+    font-size: 15px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.fitur li::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: #3feb78;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: translateY(-50%);
+}
+
+.btn-pilih, .btn-coba-gratis {
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-pilih {
+    background-color: violet;
+    margin-bottom: 10px;
+}
+
+.btn-pilih:hover {
+    background-color: rgb(7, 7, 100);
+}
+
+.btn-coba-gratis {
+    background-color: rgb(210, 100, 223);
+}
+
+.btn-coba-gratis:hover {
+    background-color: rgb(7, 7, 100);
+}
+
+.text-kecil {
+    font-size: 12px;
+    color: #777;
+}
+
+.violet-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 2px solid violet;
+    width: 100%;
+}
+
+/* Responsif untuk layar yang lebih kecil */
+@media screen and (max-width: 768px) {
+    .card-harga {
+        width: 45%; /* Lebar kartu disesuaikan pada layar lebih kecil */
+    }
+
+    .harga {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card-harga {
+        width: 90%; /* Lebar kartu penuh pada layar sangat kecil */
+    }
+
+    .harga {
+        font-size: 1.2em;
+    }
+}

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilihan Kelas</title>
+    <!-- Menambahkan link Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Mengatur tampilan dasar halaman */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1d5e5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Navbar styles */
+        header {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ccc;
+            width: 100%;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: #5b5bf0; /* Questify logo color */
+            font-weight: bold;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li {
+            display: inline; 
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold; 
+            color: #5b5bf0; 
+        }
+
+        nav ul li a:hover {
+            color: #333; /* Changes color when hovered */
+        }
+
+        .profile-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+        }
+
+        .hamburger {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .line {
+            height: 3px;
+            width: 25px;
+            background-color: #5b5bf0;
+            margin: 3px 0;
+        }
+
+        .header {
+            background-color: white;
+            width: 100%; /* Lebar penuh */
+            padding: 10px; /* Padding di dalam header */
+            text-align: center;
+            font-size: 24px;
+            color: black; 
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 2px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .container-kelas {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .kelas-card {
+            background: linear-gradient(180deg, #e9e6f1, #9675d3);
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            color: white;
+            position: relative; /* Agar label bisa berada di pojok kiri bawah */
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .kelas-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Judul utama di dalam kotak */
+        .kelas-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* Judul kecil */
+        .kelas-subtitle {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        /* Kontainer untuk ikon dan deskripsi kecil */
+        .ikon-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            font-size: 50px;
+        }
+
+        /* Deskripsi kecil di bawah ikon */
+        .ikon-deskripsi {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* Label gratis atau berbayar */
+        .label-kelas {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .gratis {
+            background-color: yellow;
+            color: black;
+        }
+
+        .berbayar {
+            background-color: green;
+        }
+
+        /* Gaya untuk pagination (nomor halaman) */
+        .pagination {
+            position: absolute;
+            bottom: 50px;
+            left: 20px;
+            display: flex;
+        }
+
+        .pagination .page-number {
+            width: 30px;
+            height: 30px;
+            border: 2px solid blue;
+            background-color: white;
+            color: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .pagination .page-number:hover {
+            background-color: #e6f0ff;
+        }
+
+        .pagination .active {
+            background-color: blue;
+            color: white;
+        }
+
+        footer { 
+            background-color: rgb(7, 7, 100); 
+            color: white; 
+            text-align: center; 
+            padding: 10px; 
+            width: 100%; 
+            margin-top: auto; 
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .kelas-card {
+                width: 200px;
+            }
+
+            nav ul {
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                background-color: white; 
+                right: 0; 
+                top: 60px; 
+                width: 100%; 
+                padding: 10px 0; 
+                border: 1px solid #ccc; 
+                z-index: 10; 
+            }
+
+            nav ul.active {
+                display: flex; 
+            }
+
+            .hamburger {
+                display: flex; 
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .kelas-card {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .pagination {
+                bottom: 10px;
+                gap: 5px;
+            }
+
+            .pagination .page-number {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="logo">
+            <h1>Questify</h1>
+        </div>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul id="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Semua Kelas</a></li>
+                <li><a href="#">Langganan</a></li>
+                <li><a href="#">Hasil Nilai</a></li>
+                <li><a href="#">English</a></li>
+            </ul>
+        </nav>
+        <div class="profile">
+            <a href="userprofile.html">
+                <img src="profile-image-url.jpg" alt="Profil" class="profile-img">
+            </a> 
+        </div>
+    </header>
+
+    <h1>Kelas Basic</h1>
+    <h2>Ayo selesaikan tantangannya</h2>
+
+    <div class="container-kelas">
+        <!-- Menambahkan semua kelas yang ada -->
+        <div class="kelas-card">
+            <h2 class="kelas-title">Kelas Basic 1</h2>
+            <div class="ikon-container">
+                <div>
+                    <i class="fas fa-book"></i> <!-- Ikon soal -->
+                    <p class="ikon-deskripsi">10 Soal</p>
+                </div>
+                <div>
+                    <i class="fas fa-clock"></i> <!-- Ikon jam -->
+                    <p class="ikon-deskripsi">10 Menit</p>
+                </div>
+            </div>
+            <a href="detailkelas.html">
+                <div class="label-kelas gratis">Gratis</div>
+            </a>
+        </div>
+
+        <div class="kelas-card">
+            <h2 class="kelas-title">Kelas Basic 2</h2>
+            <div class="ikon-container">
+                <div>
+                    <i class="fas fa-book"></i>
+                    <p class="ikon-deskripsi">15 Soal</p>
+                </div>
+                <div>
+                    <i class="fas fa-clock"></i>
+                    <p class="ikon-deskripsi">15 Menit</p>
+                </div>
+            </div>
+            <a href="detailkelas.html">
+                <div class="label-kelas berbayar">Berbayar</div>
+            </a>
+        </div>
+
+        <div class="kelas-card">
+            <h2 class="kelas-title">Kelas Basic 3</h2>
+            <div class="ikon-container">
+                <div>
+                    <i class="fas fa-book"></i>
+                    <p class="ikon-deskripsi">20 Soal</p>
+                </div>
+                <div>
+                    <i class="fas fa-clock"></i>
+                    <p class="ikon-deskripsi">20 Menit</p>
+                </div>
+            </div>
+            <a href="detailkelas.html">
+                <div class="label-kelas berbayar">Berbayar</div>
+            </a>
+        </div>
+
+        <div class="kelas-card">
+            <h2 class="kelas-title">Kelas Basic 4</h2>
+            <div class="ikon-container">
+                <div>
+                    <i class="fas fa-book"></i>
+                    <p class="ikon-deskripsi">25 Soal</p>
+                </div>
+                <div>
+                    <i class="fas fa-clock"></i>
+                    <p class="ikon-deskripsi">25 Menit</p>
+                </div>
+            </div>
+            <a href="detailkelas.html">
+                <div class="label-kelas gratis">Gratis</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="pagination">
+        <div class="page-number active">1</div>
+        <div class="page-number">2</div>
+        <div class="page-number">3</div>
+    </div>
+
+    <footer>
+        <p>Hak Cipta &copy; 2024 Questify. Semua hak dilindungi undang-undang.</p>
+    </footer>
+
+    <!-- Menambahkan JavaScript untuk toggle menu hamburger -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

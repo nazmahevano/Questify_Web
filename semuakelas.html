@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semua Kelas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1d5e5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Updated Navbar styles */
+        header {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ccc;
+            width: 100%;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: #5b5bf0;
+            font-weight: bold;
+            margin: 0; /* Added to match styling */
+        }
+
+        nav {
+            position: relative;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+            margin: 0; /* Added to match styling */
+            padding: 0; /* Added to match styling */
+        }
+
+        nav ul li {
+            display: inline; 
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold; 
+            color: #5b5bf0; 
+        }
+
+        nav ul li a:hover {
+            color: #333;
+        }
+
+        .profile-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+        }
+
+        .hamburger {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .line {
+            height: 3px;
+            width: 25px;
+            background-color: #5b5bf0;
+            margin: 3px 0;
+        }
+
+        /* Mobile Menu */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                background-color: white; 
+                right: 0; 
+                top: 60px; 
+                width: 100%; 
+                padding: 10px 0; 
+                border: 1px solid #ccc; 
+                z-index: 10; 
+            }
+
+            nav ul.active {
+                display: flex; 
+            }
+
+            .hamburger {
+                display: flex; 
+            }
+        }
+
+        .ucapan-selamat {
+            font-size: 40px;
+            margin-top: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .container-harga {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 80%;
+            max-width: 1200px;
+            margin: 30px auto;
+            flex-grow: 1;
+        }
+
+        .card-harga {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgb(250, 20, 250);
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            width: 30%;
+            margin: 15px;
+            box-sizing: border-box;
+        }
+
+        .card-harga:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgb(250, 20, 250); 
+        }
+
+        .judul-paket { 
+            font-size: 30px;
+            margin-bottom: 10px; 
+            color: rgb(7, 7, 100);
+        }
+
+        .harga { 
+            font-size: 2em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: rgb(210, 100, 223);
+        }
+
+        .fitur {
+            list-style: none;
+            padding: 0; 
+            margin: 0;
+            margin-bottom: 30px; 
+            text-align: left; 
+        }
+
+        .fitur li { 
+            margin: 10px 0;
+            color: rgb(7, 7, 100); 
+            font-size: 15px; 
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .fitur li::before { 
+            content: '';
+            width: 15px;
+            height: 15px;
+            background-color: #3feb78;
+            border-radius: 50%;
+            position: absolute;
+            left: 0; 
+            top: 30%;
+            transform: translateY(-50%);
+        }
+
+        .btn-pilih, .btn-coba-gratis {
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 15px;
+            display: inline-block;
+            margin-top: 10px; 
+            color: white; 
+            text-decoration: none;
+        }
+
+        .btn-pilih { 
+            background-color: violet; 
+        }
+
+        .btn-pilih:hover { 
+            background-color: rgb(7, 7, 100); 
+        }
+
+        .btn-coba-gratis { 
+            background-color: rgb(210, 100, 223); 
+        }
+
+        .btn-coba-gratis:hover { 
+            background-color: rgb(7, 7, 100);
+        }
+
+        .text-kecil { 
+            font-size: 12px; 
+            color: #777; 
+        }
+
+        .violet-box { 
+            background-color: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            margin-bottom: 10px; 
+            border: 2px solid violet; 
+        }
+
+        footer { 
+            background-color: rgb(7, 7, 100); 
+            color: white; 
+            text-align: center; 
+            padding: 10px; 
+            width: 100%; 
+            margin-top: auto; 
+        }
+
+        @media screen and (max-width: 768px) {
+            .card-harga { 
+                width: 45%;
+            }
+
+            .harga { 
+                font-size: 1.2em;
+            }
+        }
+
+        @media screen and (max-width: 480px) { 
+            .card-harga { 
+                width: 90%;
+            }
+            
+            .harga { 
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Updated Header -->
+    <header>
+        <div class="logo">
+            <h1>Questify</h1>
+        </div>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="semua-kelas.html">Semua Kelas</a></li>
+                <li><a href="langganan.html">Langganan</a></li>
+                <li><a href="hasil-nilai.html">Hasil Nilai</a></li>
+                <li><a href="english.html">English</a></li>
+                <li><a href="profil.html">Profil</a></li>
+            </ul>
+        </nav>
+        <div class="profile">
+            <a href="userprofile.html">
+                <img src="profile-image-url.jpg" alt="Profil" class="profile-img">
+            </a> 
+        </div>
+    </header>
+
+    <div class="ucapan-selamat"><strong>Selamat Datang, Pengguna!</strong></div>
+
+    <div class="container-harga">
+        <div class="card-harga">
+            <h2 class="judul-paket">Basic</h2> 
+            <div class="violet-box">
+                <p class="harga"><strong>50.000</strong><sub>/bulan</sub></p>
+                <img src="https://i.ibb.co/kmGbgb9/padlock-17658429.png" alt="padlock-17658429" width="80" height="80">
+                <ul class="fitur">
+                    <li><strong>Tantangan sederhana untuk pengenalan konsep</strong></li> 
+                    <li><strong>Kuis dengan soal dasar untuk menguji pemahaman awal</strong></li> 
+                </ul>
+                <a href="#" class="btn-pilih">Beli Sekarang</a>
+                <p class="text-kecil">untuk berlangganan penuh</p> 
+            </div>
+            <a href="pilihkelas.html" class="btn-coba-gratis">Coba Gratis</a>
+            <p class="text-kecil">trial dengan akses terbatas</p> 
+        </div>
+
+        <div class="card-harga">
+            <h2 class="judul-paket">Premium</h2> 
+            <div class="violet-box">
+                <p class="harga"><strong>150.000</strong><sub>/bulan</sub></p>
+                <img src="https://i.ibb.co/kmGbgb9/padlock-17658429.png" alt="padlock-17658429" width="80" height="80">
+                <ul class="fitur">
+                    <li><strong>Tantangan lebih sulit dan beragam</strong></li> 
+                    <li><strong>Akses ke materi premium</strong></li> 
+                </ul>
+                <a href="#" class="btn-pilih">Beli Sekarang</a>
+                <p class="text-kecil">untuk berlangganan penuh</p> 
+            </div>
+            <a href="pilihkelas.html" class="btn-coba-gratis">Coba Gratis</a>
+            <p class="text-kecil">trial dengan akses terbatas</p> 
+        </div>
+
+        <div class="card-harga">
+            <h2 class="judul-paket">Eksklusif</h2> 
+            <div class="violet-box">
+                <p class="harga"><strong>250.000</strong><sub>/bulan</sub></p>
+                <img src="https://i.ibb.co/kmGbgb9/padlock-17658429.png" alt="padlock-17658429" width="80" height="80">
+                <ul class="fitur">
+                    <li><strong>Akses ke semua tantangan dan kuis</strong></li> 
+                    <li><strong>Konsultasi langsung dengan ahli</strong></li> 
+                </ul>
+                <a href="#" class="btn-pilih">Beli Sekarang</a>
+                <p class="text-kecil">untuk berlangganan penuh</p> 
+            </div>
+            <a href="pilihkelas.html" class="btn-coba-gratis">Coba Gratis</a>
+            <p class="text-kecil">trial dengan akses terbatas</p> 
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Questify. All Rights Reserved.
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

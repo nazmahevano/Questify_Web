@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Questify</title>
+    <link rel="stylesheet" href="up_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        * { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #F2E5FF; 
+    color: #745bb9;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; 
+    background-color: #f8f7f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo h2 {
+    font-size: 24px;
+    color: #854994;
+}
+
+.navbar nav ul {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.navbar nav ul li {
+    margin-right: 10px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #6a407a;
+    font-size: 18px;
+    padding: 0 15px; 
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+}
+
+.profile-section .language {
+    margin-right: 20px;
+    color: #854994;
+}
+
+.profile-section {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 20px; 
+}
+
+.profile-section .avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%; 
+    max-width: 1200px; 
+    margin: 20px auto;
+    min-height: 600px; 
+}
+
+.tabs-container {
+    margin-bottom: 20px;
+}
+
+.tabs {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    background-color: #E0C3FC;
+    border-radius: 10px; 
+    padding: 0;
+}
+
+.tabs li {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+    cursor: pointer;
+    background-color: #d593fc;
+}
+
+.profile-section {
+    display: flex;
+    align-items: flex-start; 
+    margin-bottom: 20px;
+}
+
+.profile-form {
+    width: 70%; 
+    margin-left: 20px;
+}
+
+.profile-pic-section {
+    width: 30%; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.profile-pic {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+}
+
+.profile-upload {
+    margin-top: 20px; 
+}
+
+.form-left, .form-right {
+    width: 48%;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.form-left {
+    margin-right: 4%;
+}
+
+.form-full {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #230236;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.password-container {
+    position: relative; 
+}
+
+.toggle-password {
+    position: absolute; 
+    right: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    cursor: pointer; 
+    font-size: 20px; 
+}
+
+.hidden {
+    display: none;
+}
+
+.save-section {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+.save-btn {
+    background-color: #aa5cd8;
+    color: white;
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; 
+    transition: background-color 0.3s; 
+}
+
+.save-btn:hover {
+    background-color: #9932cc;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 50px;
+    background-color: #562683;
+    margin-top: 20px;
+}
+
+footer p {
+    color: #fefcff;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .navbar nav ul {
+        flex-direction: column; 
+        padding: 0;
+    }
+
+    .navbar nav ul li {
+        margin-bottom: 10px; 
+    }
+
+    .container {
+        width: 90%; 
+        padding: 20px; 
+    }
+
+    .profile-section {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .profile-form {
+        width: 100%; 
+        margin-left: 0;
+    }
+
+    .profile-pic-section {
+        width: 100%; 
+        margin-bottom: 20px; 
+    }
+
+    .profile-pic {
+        width: 100px; 
+        height: 100px; 
+    }
+
+    .form-left, .form-right {
+        width: 100%; 
+        float: none; 
+        margin-right: 0;
+    }
+
+    .form-left {
+        margin-bottom: 20px; 
+    }
+
+    .save-btn {
+        width: 100%; 
+    }
+
+    footer {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .logo h2 {
+        font-size: 20px; 
+    }
+
+    .navbar nav ul li a {
+        font-size: 16px; 
+    }
+}
+    </style>
+
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <h2>Questify</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="semuakelas.html">Home</a></li>
+          <li><a href="semuakelas.html">Semua Kelas</a></li>
+          <li><a href="langganan.html">Langganan</a></li>
+          <li><a href="#">Hasil Nilai</a></li>
+          <li><a href="#" class="language"><i class="fas fa-language"></i> English</a></li>
+        </ul>
+      </nav>
+      <div class="profile-section">
+        <img src="default-profile.jpg" alt="User Avatar" class="avatar" id="nav-avatar">
+    </div>
+    
+  </header>
+
+  <div class="container">
+<div class="tabs-container">
+    <ul class="tabs">
+        <li class="active">Profile</li>
+        <li>Daftar Transaksi</li>
+        <li><i class="fas fa-sign-out-alt"></i> Logout</li>
+    </ul>
+</div>
+     <div class="profile-section">
+        <div class="profile-form">
+            <div class="form-left">
+                <label for="first-name">Nama Depan</label>
+                <input type="text" id="first-name" value="">
+            </div>
+            <div class="form-right">
+                <label for="last-name">Nama Belakang</label>
+                <div class="last-name-container">
+                    <input type="text" id="last-name" value="">
+                </div>
+            </div>
+
+            <div class="form-full">
+                <label for="email">Email</label>
+                <input type="email" id="email" value="">
+            </div>
+            <div class="form-full">
+                <label for="password">Password</label>
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="">
+                    <span class="toggle-password eye-open" onclick="togglePassword()">👁️</span> 
+                    <span class="toggle-password eye-closed hidden" onclick="togglePassword()">👁️‍🗨️</span> 
+                </div>
+            </div>
+            <div class="form-full">
+                <label for="confirm-password">Konfirmasi Password</label>
+                <div class="password-container">
+                    <input type="password" id="confirm-password" placeholder="">
+                    <span class="toggle-password eye-open" onclick="toggleConfirmPassword()">👁️</span> 
+                    <span class="toggle-password eye-closed hidden" onclick="toggleConfirmPassword()">👁️‍🗨️</span> 
+                </div>
+                <p class="password-note">Isi password jika ingin mengubahnya</p>
+            </div>
+            <div class="form-full profile-upload">
+                <label for="profileUpload">Foto Profil</label>
+                <input type="file" accept="image/*" id="profileUpload" onchange="loadFile(event)">
+            </div>
+        </div>
+        <div class="profile-pic-section">
+            <img id="output" src="default-profile.jpg" alt="Profile Picture" class="profile-pic">
+        </div>
+    </div>
+    <div class="save-section">
+        <button class="save-btn">SAVE</button>
+    </div>
+</div>
+  <footer>
+      <p>© Questify All rights reserved</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+      var loadFile = function(event) {
+          var output = document.getElementById('output');
+          output.src = URL.createObjectURL(event.target.files[0]);
+          output.onload = function() {
+              URL.revokeObjectURL(output.src); 
+          }
+
+          var navAvatar = document.getElementById('nav-avatar');
+          navAvatar.src = URL.createObjectURL(event.target.files[0]);
+          navAvatar.onload = function() {
+              URL.revokeObjectURL(navAvatar.src); 
+          }
+      };
+
+      function loadFile(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+        URL.revokeObjectURL(output.src); 
+    }
+}
+
+      function togglePassword() {
+    const passwordField = document.getElementById('password');
+    const eyeOpen = document.querySelector('.password-container .eye-open');
+    const eyeClosed = document.querySelector('.password-container .eye-closed'); 
+
+    if (passwordField.type === "password") {
+        passwordField.type = "text"; 
+        eyeOpen.classList.add('hidden');
+        eyeClosed.classList.remove('hidden'); 
+    } else {
+        passwordField.type = "password"; 
+        eyeOpen.classList.remove('hidden'); 
+        eyeClosed.classList.add('hidden'); 
+    }
+}
+
+function toggleConfirmPassword() {
+    const confirmPasswordField = document.getElementById('confirm-password');
+    const eyeOpen = document.querySelector('.password-container .eye-open');
+    const eyeClosed = document.querySelector('.password-container .eye-closed'); 
+
+    if (confirmPasswordField.type === "password") {
+        confirmPasswordField.type = "text"; 
+        eyeOpen.classList.add('hidden'); 
+        eyeClosed.classList.remove('hidden');
+    } else {
+        confirmPasswordField.type = "password"; 
+        eyeOpen.classList.remove('hidden');
+        eyeClosed.classList.add('hidden'); 
+    }
+}
+  </script>
+</body>
+</html>
+

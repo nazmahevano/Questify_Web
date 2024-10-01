@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Management</title>
+    <link rel="stylesheet" href="css/kelas.css">
+</head>
+<body>
+
+    <!-- Form untuk menambahkan kelas -->
+    <section class="classroom-form">
+        <h1>PILIH KELAS</h1>
+        <form id="classroomForm">
+            <label for="KELAS BASIC">KELAS BASIC:</label>
+            <input type="text" id="KELAS BASIC" name="KELAS BASIC" required>
+
+            <label for="KELAS INTERMEDIATE">KELAS INTERMEDIATE:</label>
+            <textarea id="KELAS INTERMEDIATE" name="KELAS INTERMEDIATE" required></textarea>
+
+            <button type="submit">Create Classroom</button>
+        </form>
+    </section>
+
+    <!-- Daftar kelas -->
+    <section class="classroom-list">
+        <h2>Available Classrooms</h2>
+        <ul id="classroomList">
+            <!-- Kelas akan ditampilkan di sini -->
+        </ul>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

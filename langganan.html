@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mengatur tampilan responsif -->
+    <title>Semua Kelas</title> <!-- Judul halaman yang ditampilkan di tab browser -->
+    <style> /* CSS */
+        body {
+            font-family: Arial, sans-serif; /* font untuk body */
+            font-size: 15px;
+            color:#777;
+            background-color: #f1d5e5;
+            margin: 0; /* Menghilangkan margin default */
+            padding: 0; /* Menghilangkan padding default*/
+            display: flex; /* Flexbox untuk tata letak */
+            flex-direction: column; /* Menyusun elemen secara vertikal */
+            min-height: 100vh; /* tinggi minimal body 100% dari viewport */
+        }
+
+        .header {
+            background-color: white;
+            width: 100%; /* Lebar penuh */
+            padding: 10px; /* Padding di dalam header */
+            text-align: center;
+            font-size: 24px;
+            color: black; 
+        }
+
+        .ucapan-selamat {
+            font-size: 40px;
+            margin-top: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .container-harga {
+            display: flex; /* Flexbox untuk kontainer harga */
+            justify-content: center; /* Memusatkan isi secara horizontal */
+            flex-wrap: wrap; /* Mengizinkan pembungkus baris */
+            width: 80%; /* Lebar kontainer */
+            max-width: 1200px; /* Lebar maksimum kontainer */
+            margin: 30px auto; /* Margin atas dan bawah 30px, margin kiri dan kanan auto untuk pusat */
+            flex-grow: 1; /* Kontainer tumbuh untuk mengisi ruang */
+        }
+
+        .card-harga {
+            background-color: white;
+            border-radius: 10px; /* Sudut melengkung pada kartu */
+            box-shadow: 0 8px 16px rgb(250, 20, 250);
+            padding: 10px; /* Padding di dalam kartu */
+            text-align: center;
+            transition: transform 0.3s; /* Transisi saat efek hover */
+            width: 30%; /* Lebar kartu */
+            margin: 15px; /* Margin antar kartu */
+            box-sizing: border-box; /* Menghitung padding dan border dalam lebar total */
+        }
+
+        .card-harga:hover {
+            transform: translateY(-10px); /* Efek mengangkat saat hover */
+            box-shadow: 0 12px 24px rgb(250, 20, 250); 
+        }
+
+        .judul-paket { 
+            font-size: 30px;
+            margin-bottom: 10px; 
+            color: rgb(7, 7, 100);
+        }
+
+        .harga { 
+            font-size: 2em; /* ukuran font agar mudah disesuaikan dengan semua peerangkat */
+            white-space: nowrap; /* Mencegah pemisahan teks ke baris baru */
+            overflow: hidden; /* Menghindari overflow konten */
+            text-overflow: ellipsis; /* Menambahkan titik-titik jika teks terlalu panjang */
+            color: rgb(210, 100, 223);
+        }
+
+        .fitur {
+            list-style: none;
+            padding: 0; 
+            margin: 0;
+            margin-bottom: 30px; 
+            text-align: left; 
+        }
+
+        .fitur li { 
+            margin: 10px 0; /* Jarak atas dan bawah setiap item list */
+            color: rgb(7, 7, 100); 
+            font-size: 15px; 
+            position: relative; /* diposisikan tanpa mempengaruhi posisi elemen lainnya */
+            padding-left: 25px; /* Jarak kiri untuk memberi ruang pada bullet */
+        }
+
+        .fitur li::before { 
+            content: ''; /* Mengatur konten sebelum item list */
+            width: 15px; /* Lebar bullet */
+            height: 15px; /* Tinggi bullet */
+            background-color: #3feb78;
+            border-radius: 50%; /* Membuat bullet berbentuk bulat */
+            position: absolute; /* font untuk body */
+            left: 0; 
+            top: 30%; /* Jarak atas bullet untuk menyeimbangkan vertikal */
+            transform: translateY(-50%); /* Mengatur bullet agar berada di tengah secara vertikal */
+        }
+
+        .btn-pilih, .btn-mulai, .btn-coba-gratis {
+            padding: 10px 20px; /* Jarak dalam tombol */
+            border-radius: 5px; /* Membuat sudut tombol melengkung */
+            transition: background-color 0.3s;
+            font-size: 15px;
+            display: inline-block; /* Mengatur tombol sebagai elemen blok dalam baris */
+            margin-top: 10px; 
+            color: white; 
+            text-decoration: none; /* Menghapus garis bawah pada teks tombol */
+        }
+
+        .btn-pilih { 
+            background-color: violet; 
+        }
+
+        .btn-pilih:hover { 
+            background-color: rgb(7, 7, 100); 
+        }
+
+        .btn-mulai { 
+            background-color: violet; 
+        }
+
+        .btn-mulai:hover { 
+            background-color: rgb(7, 7, 100); 
+        }
+
+        .btn-coba-gratis { 
+            background-color: rgb(210, 100, 223); 
+        }
+
+        .btn-coba-gratis:hover { 
+            background-color: rgb(7, 7, 100);
+        }
+
+        .text-kecil { 
+            font-size: 12px; 
+            color: #777;
+        }
+
+        .text-besar { 
+            font-size: 30px; 
+            color: #e4bc38;
+        }
+
+        .violet-box { 
+            background-color: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            margin-bottom: 10px; 
+            border: 2px solid violet; 
+        }
+
+        .white-box { 
+            background-color: white; 
+            padding: 20px; 
+            margin-bottom: 10px; 
+        }
+
+        footer { 
+            background-color: rgb(7, 7, 100); 
+            color: white; 
+            text-align: center; 
+            padding: 10px; 
+            width: 100%; 
+            margin-top: auto; 
+        }
+
+        @media screen and (max-width: 768px) {
+            .card-harga { 
+                width: 45%; /* Kartu akan berukuran 45% pada tablet */
+            }
+
+            .harga { 
+                font-size: 1.2em; /* Ukuran font harga di tablet */
+            }
+        }
+
+        @media screen and (max-width: 480px) { 
+            .card-harga { 
+                width: 90%; /* Kartu akan berukuran 90% pada ponsel */
+            }
+            
+            .harga { 
+                font-size: 1.2em; /* Ukuran font harga di ponsel */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">Untuk Header</div> <!-- Header halaman -->
+
+    <div class="ucapan-selamat"><strong>Selamat Datang, Pengguna!</strong></div> <!-- ucapan selamat --> 
+
+    <div class="container-harga"> <!-- Kontainer untuk semua kartu harga -->
+        <div class="card-harga"> <!-- Kartu harga untuk paket Basic -->
+            <h2 class="judul-paket">Basic</h2>
+            <div class="white-box">
+            <p class="text-besar"><strong>Langganan Aktif</strong></p> <!-- Harga paket -->
+            <img src="https://i.ibb.co.com/HKVNqjC/open-lock-16123864.png" alt="open-lock-16123864" width="100" height="100"> <!-- Gambar ikon -->
+            <ul class="fitur"> <!-- Daftar fitur paket -->
+                <li><strong>Tantangan sederhana untuk pengenalan konsep</strong></li> 
+                <li><strong>Kuis dengan soal dasar untuk menguji pemahaman awal</strong></li> 
+            </ul>
+            <p>Langganan berlaku hingga</p><p>25 Oktober 2025</p>
+            <p><a href="#" class="btn-mulai">Mulai</a></p> <!-- Tombol untuk membeli paket --> 
+            </div>
+        </div>
+
+        <div class="card-harga"> <!-- Kartu harga untuk paket Intermediate -->
+            <h2 class="judul-paket">Intermediate</h2>
+            <div class="white-box">
+            <p class="text-besar"><strong>Langganan Aktif</strong></p> <!-- Harga paket -->
+            <img src="https://i.ibb.co.com/HKVNqjC/open-lock-16123864.png" alt="open-lock-16123864" width="100" height="100"> <!-- Gambar ikon -->
+            <ul class="fitur">
+                <li><strong>Misi dengan kompleksitas menengah yang menantang</strong></li>
+                <li><strong>Soal yang lebih sulit dengan batas waktu yang lebih singkat</strong></li>
+            </ul>
+            <p>Langganan berlaku hingga</p><p>24 September 2024</p>
+            <p class="text-kecil">Sisa 10 hari akses ke kelass</p>
+            <a href="payment1.html" class="btn-pilih">Beli Sekarang</a>
+            <p><a href="#" class="text-kecil">perpanjang sekarang</a></p>
+            </div>
+        </div>
+
+        <div class="card-harga"> <!-- Kartu harga untuk paket Advanced -->
+            <h2 class="judul-paket">Advanced</h2>
+            <div class="violet-box">
+                <p class="harga"><strong>250.000</strong><sub>/bulan</sub></p>
+                <img src="https://i.ibb.co.com/kmGbgb9/padlock-17658429.png" alt="padlock-17658429" width="80" height="80">
+                <ul class="fitur">
+                    <li><strong>Misi tingkat tinggi dengan variabel kompleks</strong></li>
+                    <li><strong>Ujian dengan tingkat kesulitan tinggi dan waktu terbatas</strong></li>
+                </ul>
+                <a href="payment1.html" class="btn-pilih">Beli Sekarang</a>
+                <p class="text-kecil">untuk berlangganan penuh</p>
+            </div>
+            <a href="#" class="btn-coba-gratis">Coba Gratis</a>
+            <p class="text-kecil">trial dengan akses terbatas</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; Untuk Footer. <!-- Footer halaman -->
+    </footer>
+
+</body>
+</html>

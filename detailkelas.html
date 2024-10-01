@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questify - Detail Kelas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2ff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: #5b5bf0; /* Questify logo color */
+            font-weight: bold;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li {
+            display: inline; 
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold; 
+            color: #5b5bf0; 
+        }
+
+        nav ul li a:hover {
+            color: #333; /* Changes color when hovered */
+        }
+
+        .profile-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+        }
+
+        .hamburger {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .line {
+            height: 3px;
+            width: 25px;
+            background-color: #5b5bf0;
+            margin: 3px 0;
+        }
+
+        .main-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2eaff;
+            padding: 20px;
+        }
+
+        h1.title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .content-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .details p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .details span {
+            font-weight: bold;
+        }
+
+        .instruction {
+            margin-bottom: 20px;
+        }
+
+        .instruction p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .highlight {
+            color: #333;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .button-group button {
+            background-color: #f0a2ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .button-group .mulai-btn {
+            background-color: #5b5bf0;
+        }
+
+        .button-group .kembali-btn {
+            background-color: #f0a2ff;
+        }
+
+        footer {
+            background-color: navy;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: auto;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                background-color: white; 
+                right: 0; 
+                top: 60px; 
+                width: 100%; 
+                padding: 10px 0; 
+                border: 1px solid #ccc; 
+                z-index: 10; 
+            }
+
+            nav ul.active {
+                display: flex; 
+            }
+
+            .hamburger {
+                display: flex; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Questify</h1>
+        </div>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul id="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Semua Kelas</a></li>
+                <li><a href="#">Langganan</a></li>
+                <li><a href="#">Hasil Nilai</a></li>
+                <li><a href="#">English</a></li>
+            </ul>
+        </nav>
+        <div class="profile">
+            <a href="userprofile.html">
+                <img src="profile-image-url.jpg" alt="Profil" class="profile-img">
+            </a> 
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <h1 class="title">Judul Misi</h1> 
+        
+        <div class="content-card">
+            <div class="details">
+                <p><span>Jumlah soal</span> : 10</p>
+                <p><span>Jumlah</span> : 10</p>
+                <p><span>Kategori</span> : Debit dan Kredit</p>
+                <p><span>Durasi</span> : 10 menit</p>
+                <p><span>Tata cara menjawab</span> : Cara menjawab...</p>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <p class="highlight">Kamu harus mencapai skor min 70 untuk bisa dinyatakan lulus.</p>
+            <p class="highlight">Selamat mengerjakan!</p>
+        </div>
+
+        <div class="button-group">
+            <button class="kembali-btn">Kembali</button>
+            <a href="soal.html">
+                <button class="mulai-btn">Mulai</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Questify All rights reserved</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active'); 
+        }
+    </script>
+</body>
+</html>
