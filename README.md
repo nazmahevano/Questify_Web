@@ -1,7 +1,7 @@
 EDUCOURSE
 
 KELOMPOK 5
-Mentor: Muhammad Khairul Ahmad
+Mentor: Mr. Muhammad Khairul Ahmad
 
 1. 9764095 Reisye Remagari Hidayatullah 
 2. ⁠11206516 Kalsum Burhani Putri
