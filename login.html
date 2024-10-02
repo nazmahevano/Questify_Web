@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css"> <!-- Pastikan jalur ini benar -->
+    <link rel="stylesheet" href="css/styles.css">
     <title>Login Page</title>
-</head>
+</head>    
 <body>
     <div class="container vh-100 d-flex justify-content-center align-items-center">
         <div class="row w-100 shadow-lg">
             <div class="col-md-6 d-none d-md-block p-0">
-                <img src="images/logo.jpg" alt="Questify Logo" class="img-fluid w-100 h-100" style="object-fit: cover;">
+                <img src="assets/images/logo.jpg" alt="Questify Logo" class="img-fluid w-100 h-100" style="object-fit: cover;">
             </div>
             <div class="col-md-6 bg-white p-4 d-flex flex-column justify-content-center">
                 <h2 class="text-center mb-4">Login</h2>
-                <form onsubmit="return false;"> <!-- Mencegah pengiriman form secara default -->
+                <form action="semuakelas.html" method="GET">
                     <div class="mb-3">
                         <input type="text" class="form-control" placeholder="Username" required>
                     </div>
@@ -30,7 +30,7 @@
                         <a href="#" class="text-decoration-none">Forgot password?</a>
                     </div>
                     <div class="d-grid">
-                        <button type="button" class="btn btn-primary" onclick="location.href='semuakelas.html';">Login</button>
+                        <button type="submit" class="btn btn-primary">Login</button>
                     </div>
                     <div class="text-center mt-3">
                         <p>Belum punya akun? <a href="register.html" class="text-decoration-none">Register</a></p>
@@ -39,5 +39,6 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
