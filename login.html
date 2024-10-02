@@ -3,34 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Josh:wght@800;600&display=swap" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"> <!-- Pastikan jalur ini benar -->
     <title>Login Page</title>
 </head>
 <body>
-    <div class="container">
-        <div class="image-container">
-            <h1 class="brand-title">Questify</h1>
-            <p class="brand-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="login-box">
-            <h2 class="login-header">Login</h2>
-            <div class="input-box">
-                <input type="text" class="input-field" placeholder="username">
+    <div class="container vh-100 d-flex justify-content-center align-items-center">
+        <div class="row w-100 shadow-lg">
+            <div class="col-md-6 d-none d-md-block p-0">
+                <img src="images/logo.jpg" alt="Questify Logo" class="img-fluid w-100 h-100" style="object-fit: cover;">
             </div>
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="password">
-            </div>
-            <div class="forgot-password">
-                <a href="#">lupa password?</a>
-            </div>
-            <div class="input-submit">
-                <a href="semuakelas.html">
-                    <button class="submit-btn">Login</button>
-                </a>
-            </div>
-            <div class="sign-up-link">
-                <a href="register.html">Belum mempunyai akun? Register disini</a>
+            <div class="col-md-6 bg-white p-4 d-flex flex-column justify-content-center">
+                <h2 class="text-center mb-4">Login</h2>
+                <form onsubmit="return false;"> <!-- Mencegah pengiriman form secara default -->
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Username" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input type="checkbox" class="form-check-input" id="checkbox">
+                        <label class="form-check-label" for="checkbox">Keep Me Logged In</label>
+                    </div>
+                    <div class="mb-3 text-end">
+                        <a href="#" class="text-decoration-none">Forgot password?</a>
+                    </div>
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-primary" onclick="location.href='semuakelas.html';">Login</button>
+                    </div>
+                    <div class="text-center mt-3">
+                        <p>Belum punya akun? <a href="regist.html" class="text-decoration-none">Register</a></p>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
