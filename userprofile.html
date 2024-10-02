@@ -4,422 +4,322 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile - Questify</title>
-    <!-- <link rel="stylesheet" href="up_style.css"> -->
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * { 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
-    font-family: 'Arial', sans-serif;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
 
-body {
-    background-color: #F2E5FF; 
-    color: #745bb9;
-}
+        .navbar {
+            background-color: #f8f9fa;
+            padding: 20px 10%; 
+            max-width: 100%; 
+            box-shadow: none;  
+        }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px; 
-    background-color: #f8f7f8;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+        .navbar-brand h2 {
+            color: #745bb9;  
+            font-size: 1.75rem;
+            font-weight: bold;
+        }
 
-.navbar .logo h2 {
-    font-size: 24px;
-    color: #854994;
-}
+        .nav-link {
+            color: #745bb9; 
+            margin-right: 1rem;
+            font-weight: 500;
+        }
 
-.navbar nav ul {
-    display: flex;
-    list-style: none;
-    padding-left: 0;
-}
+        .nav-link:hover {
+            color: #563d7c;
+        }
 
-.navbar nav ul li {
-    margin-right: 10px;
-}
+        .navbar-toggler {
+            border-color: #745bb9;
+        }
 
-.navbar nav ul li a {
-    text-decoration: none;
-    color: #6a407a;
-    font-size: 18px;
-    padding: 0 15px; 
-}
+        #nav-avatar {
+            border: 2px solid #745bb9;  
+        }
 
-.profile-section {
-    display: flex;
-    align-items: center;
-}
+        .nav-tabs .nav-link {
+            color: #745bb9;
+            font-weight: 500;
+        }
 
-.profile-section .language {
-    margin-right: 20px;
-    color: #854994;
-}
+        .nav-tabs .nav-link.active {
+            background-color: #745bb9;
+            color: #fff;
+            border-radius: 5px 5px 0 0;
+        }
 
-.profile-section {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    margin: 20px; 
-}
+        .container {
+            max-width: 900px; 
+            margin: 0 auto; 
+        }
 
-.profile-section .avatar {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
-}
+        .form-control {
+            border: 2px solid #d37ebe;
+            border-radius: 5px;
+        }
 
-.container {
-    background-color: #fff;
-    padding: 30px; 
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 80%; 
-    max-width: 1200px; 
-    margin: 20px auto;
-    min-height: 600px; 
-}
+        .form-label {
+            font-weight: 600;
+            color: #563d7c;
+        }
 
-.tabs-container {
-    margin-bottom: 20px;
-}
+        #output {
+            border: 5px solid #745bb9;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
 
-.tabs {
-    list-style-type: none;
-    display: flex;
-    width: 100%;
-    background-color: #E0C3FC;
-    border-radius: 10px; 
-    padding: 0;
-}
+        #output {
+            border: 5px solid #745bb9; 
+            width: 180px; 
+            height: 180px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            display: block; 
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.tabs li {
-    flex: 1;
-    text-align: center;
-    padding: 10px 0;
-    color: #fff;
-    cursor: pointer;
-    background-color: #d593fc;
-}
+        .btn-primary {
+            background-color: #745bb9;
+            border: none;
+            font-weight: bold;
+            padding: 10px 200px;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+            width: 100%; 
+            max-width: 200px; 
+            margin: 20px auto; 
+            display: block; 
+        }
 
-.profile-section {
-    display: flex;
-    align-items: flex-start; 
-    margin-bottom: 20px;
-}
+        .nav-tabs {
+            border-bottom: none;
+        }
 
-.profile-form {
-    width: 70%; 
-    margin-left: 20px;
-}
+        .nav-tabs .nav-item .nav-link {
+            background-color: #9575cd;
+            color: white;
+            border: none;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
 
-.profile-pic-section {
-    width: 30%; 
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-}
+        .nav-tabs .nav-item .nav-link.active {
+            background-color: #9575cd;
+            color: white;
+            border: none;
+        }
 
-.profile-pic {
-    width: 150px; 
-    height: 150px; 
-    border-radius: 50%; 
-    object-fit: cover; 
-}
+        .nav-tabs .nav-item .nav-link:hover {
+            background-color: #745bb9;
+            color: white;
+        }
 
-.profile-upload {
-    margin-top: 20px; 
-}
+        .nav-tabs .nav-item .nav-link .fas {
+            margin-right: 5px;
+        }
 
-.form-left, .form-right {
-    width: 48%;
-    float: left;
-    margin-bottom: 20px;
-}
+        .container {
+            max-width: 90%;
+        }
 
-.form-left {
-    margin-right: 4%;
-}
+        .btn-primary:hover {
+            background-color: #563d7c; 
+        }
 
-.form-full {
-    width: 100%;
-    margin-bottom: 20px;
-}
+        footer {
+            background-color: #563d7c;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            max-width: 100%;  
+            padding-left: 5%;
+            padding-right: 5%;
+        }
 
-label {
-    display: block;
-    margin-bottom: 10px;
-    color: #230236;
-}
+        footer p {
+            margin: 0;
+        }
 
-input[type="text"], input[type="email"], input[type="password"], input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #dcdcdc;
-    border-radius: 5px;
-    font-size: 16px;
-}
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                max-width: 95%; 
+            }
 
-.password-container {
-    position: relative; 
-}
+            #output {
+                width: 140px; 
+                height: 140px;
+            }
 
-.toggle-password {
-    position: absolute; 
-    right: 10px; 
-    top: 50%; 
-    transform: translateY(-50%); 
-    cursor: pointer; 
-    font-size: 20px; 
-}
+            .btn-primary {
+                width: 100%; 
+            }
+        }
 
-.hidden {
-    display: none;
-}
-
-.save-section {
-    text-align: center;
-    margin-top: 20px; 
-}
-
-.save-btn {
-    background-color: #aa5cd8;
-    color: white;
-    padding: 10px 20px; 
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px; 
-    transition: background-color 0.3s; 
-}
-
-.save-btn:hover {
-    background-color: #9932cc;
-}
-
-footer {
-    text-align: center;
-    padding: 10px 50px;
-    background-color: #562683;
-    margin-top: 20px;
-}
-
-footer p {
-    color: #fefcff;
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; 
-        align-items: flex-start; 
-    }
-
-    .navbar nav ul {
-        flex-direction: column; 
-        padding: 0;
-    }
-
-    .navbar nav ul li {
-        margin-bottom: 10px; 
-    }
-
-    .container {
-        width: 90%; 
-        padding: 20px; 
-    }
-
-    .profile-section {
-        flex-direction: column; 
-        align-items: center;
-    }
-
-    .profile-form {
-        width: 100%; 
-        margin-left: 0;
-    }
-
-    .profile-pic-section {
-        width: 100%; 
-        margin-bottom: 20px; 
-    }
-
-    .profile-pic {
-        width: 100px; 
-        height: 100px; 
-    }
-
-    .form-left, .form-right {
-        width: 100%; 
-        float: none; 
-        margin-right: 0;
-    }
-
-    .form-left {
-        margin-bottom: 20px; 
-    }
-
-    .save-btn {
-        width: 100%; 
-    }
-
-    footer {
-        padding: 10px 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar .logo h2 {
-        font-size: 20px; 
-    }
-
-    .navbar nav ul li a {
-        font-size: 16px; 
-    }
-}
+        @media (max-width: 576px) {
+            #output {
+                width: 120px;
+                height: 120px;
+            }
+        }
     </style>
-
 </head>
 <body>
+  <!-- Navbar -->
   <header>
-    <div class="navbar">
-      <div class="logo">
-        <h2>Questify</h2>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <h2 class="text-primary">Questify</h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Semua Kelas</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Langganan</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Hasil Nilai</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-language"></i> English</a></li>
+          </ul>
+          <div class="d-flex align-items-center">
+            <img src="default-profile.jpg" alt="User Avatar" class="avatar rounded-circle" id="nav-avatar" width="40">
+          </div>
+        </div>
       </div>
-      <nav>
-        <ul>
-          <li><a href="semuakelas.html">Home</a></li>
-          <li><a href="semuakelas.html">Semua Kelas</a></li>
-          <li><a href="langganan.html">Langganan</a></li>
-          <li><a href="#">Hasil Nilai</a></li>
-          <li><a href="#" class="language"><i class="fas fa-language"></i> English</a></li>
-        </ul>
-      </nav>
-      <div class="profile-section">
-        <img src="default-profile.jpg" alt="User Avatar" class="avatar" id="nav-avatar">
-    </div>
-    
+    </nav>
   </header>
 
-  <div class="container">
-<div class="tabs-container">
-    <ul class="tabs">
-        <li class="active">Profile</li>
-        <li>Daftar Transaksi</li>
-        <li><i class="fas fa-sign-out-alt"></i> Logout</li>
-    </ul>
+ <!-- Profile Section -->
+<div class="container mt-5">
+  <div class="row">
+      <div class="col-12">
+          <ul class="nav nav-tabs justify-content-between align-items-center" style="background-color: #9575cd; padding: 10px; border-radius: 10px;">
+              <li class="nav-item">
+                  <a class="nav-link active text-white" href="#" style="font-weight: bold;">Profile</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="#" style="font-weight: bold;">Daftar Transaksi</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="#" style="font-weight: bold;">
+                      <i class="fas fa-sign-out-alt"></i> Logout
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
 </div>
-     <div class="profile-section">
-        <div class="profile-form">
-            <div class="form-left">
-                <label for="first-name">Nama Depan</label>
-                <input type="text" id="first-name" value="">
-            </div>
-            <div class="form-right">
-                <label for="last-name">Nama Belakang</label>
-                <div class="last-name-container">
-                    <input type="text" id="last-name" value="">
-                </div>
-            </div>
+<div class="container">
+  <div class="row mt-4 justify-content-center">
+      <div class="col-md-8 mx-auto">
+          <form>
+              <div class="row mb-3">
+                  <div class="col">
+                      <label for="first-name" class="form-label">Nama Depan</label>
+                      <input type="text" class="form-control" id="first-name" value="">
+                  </div>
+                  <div class="col">
+                      <label for="last-name" class="form-label">Nama Belakang</label>
+                      <input type="text" class="form-control" id="last-name" value="">
+                  </div>
+              </div>
+              <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" value="">
+              </div>
+              <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <div class="input-group">
+                      <input type="password" class="form-control" id="password" placeholder="">
+                  </div>
+              </div>
+              <div class="mb-3">
+                  <label for="confirm-password" class="form-label">Konfirmasi Password</label>
+                  <div class="input-group">
+                      <input type="password" class="form-control" id="confirm-password" placeholder="">
+                  </div>
+                  <small class="text-muted">Isi password jika ingin mengubahnya</small>
+              </div>
+              <div class="mb-3">
+                  <label for="profileUpload" class="form-label">Foto Profil</label>
+                  <input class="form-control" type="file" id="profileUpload" accept="image/*" onchange="loadFile(event)">
+              </div>
+          </form>
+      </div>
+      <div class="col-md-4 d-flex flex-column align-items-center">
+          <img id="output" src="default-profile.jpg" alt="Profile Picture" class="rounded-circle img-fluid" style="width: 150px; height: 150px;">
+      </div>
+  </div>
+</div>
 
-            <div class="form-full">
-                <label for="email">Email</label>
-                <input type="email" id="email" value="">
-            </div>
-            <div class="form-full">
-                <label for="password">Password</label>
-                <div class="password-container">
-                    <input type="password" id="password" placeholder="">
-                    <span class="toggle-password eye-open" onclick="togglePassword()">👁️</span> 
-                    <span class="toggle-password eye-closed hidden" onclick="togglePassword()">👁️‍🗨️</span> 
-                </div>
-            </div>
-            <div class="form-full">
-                <label for="confirm-password">Konfirmasi Password</label>
-                <div class="password-container">
-                    <input type="password" id="confirm-password" placeholder="">
-                    <span class="toggle-password eye-open" onclick="toggleConfirmPassword()">👁️</span> 
-                    <span class="toggle-password eye-closed hidden" onclick="toggleConfirmPassword()">👁️‍🗨️</span> 
-                </div>
-                <p class="password-note">Isi password jika ingin mengubahnya</p>
-            </div>
-            <div class="form-full profile-upload">
-                <label for="profileUpload">Foto Profil</label>
-                <input type="file" accept="image/*" id="profileUpload" onchange="loadFile(event)">
-            </div>
-        </div>
-        <div class="profile-pic-section">
-            <img id="output" src="default-profile.jpg" alt="Profile Picture" class="profile-pic">
-        </div>
-    </div>
-    <div class="save-section">
-        <button class="save-btn">SAVE</button>
-    </div>
-</div>
-  <footer>
-      <p>© Questify All rights reserved</p>
+  <!-- Footer -->
+  <footer class=" text-center py-3 mt-5">
+    <p>© Questify All rights reserved</p>
   </footer>
 
   <!-- JavaScript -->
   <script>
-      var loadFile = function(event) {
-          var output = document.getElementById('output');
-          output.src = URL.createObjectURL(event.target.files[0]);
-          output.onload = function() {
-              URL.revokeObjectURL(output.src); 
-          }
-
-          var navAvatar = document.getElementById('nav-avatar');
-          navAvatar.src = URL.createObjectURL(event.target.files[0]);
-          navAvatar.onload = function() {
-              URL.revokeObjectURL(navAvatar.src); 
-          }
-      };
-
-      function loadFile(event) {
-    var output = document.getElementById('output');
-    output.src = URL.createObjectURL(event.target.files[0]);
-    output.onload = function() {
+    function loadFile(event) {
+      var output = document.getElementById('output');
+      output.src = URL.createObjectURL(event.target.files[0]);
+      output.onload = function() {
         URL.revokeObjectURL(output.src); 
+      }
+
+      var navAvatar = document.getElementById('nav-avatar');
+      navAvatar.src = URL.createObjectURL(event.target.files[0]);
+      navAvatar.onload = function() {
+        URL.revokeObjectURL(navAvatar.src); 
+      }
     }
-}
 
-      function togglePassword() {
-    const passwordField = document.getElementById('password');
-    const eyeOpen = document.querySelector('.password-container .eye-open');
-    const eyeClosed = document.querySelector('.password-container .eye-closed'); 
+    function togglePassword() {
+      const passwordField = document.getElementById('password');
+      const eyeOpen = document.querySelector('.input-group .eye-open');
+      const eyeClosed = document.querySelector('.input-group .eye-closed'); 
 
-    if (passwordField.type === "password") {
-        passwordField.type = "text"; 
-        eyeOpen.classList.add('hidden');
-        eyeClosed.classList.remove('hidden'); 
-    } else {
-        passwordField.type = "password"; 
-        eyeOpen.classList.remove('hidden'); 
-        eyeClosed.classList.add('hidden'); 
+      if (passwordField.type === "password") {
+          passwordField.type = "text"; 
+          eyeOpen.classList.add('hidden');
+          eyeClosed.classList.remove('hidden'); 
+      } else {
+          passwordField.type = "password"; 
+          eyeOpen.classList.remove('hidden'); 
+          eyeClosed.classList.add('hidden'); 
+      }
     }
-}
 
-function toggleConfirmPassword() {
-    const confirmPasswordField = document.getElementById('confirm-password');
-    const eyeOpen = document.querySelector('.password-container .eye-open');
-    const eyeClosed = document.querySelector('.password-container .eye-closed'); 
+    function toggleConfirmPassword() {
+      const confirmPasswordField = document.getElementById('confirm-password');
+      const eyeOpen = document.querySelector('.input-group .eye-open');
+      const eyeClosed = document.querySelector('.input-group .eye-closed'); 
 
-    if (confirmPasswordField.type === "password") {
-        confirmPasswordField.type = "text"; 
-        eyeOpen.classList.add('hidden'); 
-        eyeClosed.classList.remove('hidden');
-    } else {
-        confirmPasswordField.type = "password"; 
-        eyeOpen.classList.remove('hidden');
-        eyeClosed.classList.add('hidden'); 
+      if (confirmPasswordField.type === "password") {
+          confirmPasswordField.type = "text"; 
+          eyeOpen.classList.add('hidden'); 
+          eyeClosed.classList.remove('hidden');
+      } else {
+          confirmPasswordField.type = "password"; 
+          eyeOpen.classList.remove('hidden');
+          eyeClosed.classList.add('hidden'); 
+      }
     }
-}
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
