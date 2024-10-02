@@ -12,76 +12,118 @@ body {
     min-height: 100vh;
 }
 
-header {
+.header {
     background-color: white;
-    padding: 20px;
+    width: 100%; /* Lebar penuh */
+    padding: 10px; /* Padding di dalam header */
+    text-align: center;
+    font-size: 24px;
+    color: black;
+  }
+
+        /* Updated Navbar styles */
+        .navbar {
+    width: 100vw;
+    max-width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+    padding: 5px 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+  }
 
-.logo h1 {
-    font-size: 24px;
-    color: #6d6d77;
+  .logo {
+    font-size: 25px;
     font-weight: bold;
-}
-
-nav ul {
-    list-style-type: none;
     display: flex;
-    gap: 30px;
-}
+    align-items: center; /* Menyelaraskan logo dan gambar secara vertikal */
+  }
 
-nav ul li {
-    position: relative;
-}
+  .logo img {
+    width: 30px;
+    height: auto;
+    margin-left: 5px; /* Mengurangi jarak ke kiri */
+  }
 
-nav ul li a {
+  .menu {
+    display: flex;
+    flex-grow: 1; /* Memungkinkan menu untuk mengambil ruang yang tersisa */
+    justify-content: center; /* Menyeimbangkan menu di tengah */
+    gap: 20px; /* Jarak antar menu */
+  }
+
+  .navbar a {
+    color: #010851;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    color: #0f0f9b;
-}
+    padding: 14px 20px;
+  }
 
-nav ul li a:hover {
-    color: #333;
-}
+  .navbar a:hover {
+    background-color: #dddddd65;
+    color: #ed80fd;
+  }
 
-/* Dropdown styling */
-nav ul li:hover .dropdown {
-    display: block;
-}
+  /* CSS untuk Bahasa dan Masuk */
+  .menu-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antara Bahasa dan Masuk */
+  }
 
-.dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    min-width: 150px;
-    z-index: 1;
-}
-
-.dropdown a {
-    display: block;
-    padding: 10px;
+  .menu-actions a {
+    color: #010851;
     text-decoration: none;
-    font-size: 14px;
-    color: #5b5bf0;
-}
+    font-weight: 500;
+  }
 
-.dropdown a:hover {
-    background-color: #f0f0f0;
-}
+  /* Tombol Masuk dengan style button */
+  .btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
 
-.profile-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #ccc;
-}
+  .btn-primary {
+    background-color: #9fa3f1;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #2a308b;
+  }
+
+  /* Gaya untuk avatar */
+  .avatar {
+    width: 40px; /* Ukuran avatar */
+    height: 40px; /* Ukuran avatar */
+    border-radius: 50%; /* Membuat bulat */
+    cursor: pointer; /* Mengubah kursor saat hover */
+    object-fit: cover; /* Memastikan gambar tetap proporsional */
+  }
+
+
+  /* Responsif untuk layar kecil */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-wrap: wrap; /* Mengizinkan konten membungkus di layar kecil */
+    }
+
+    .menu {
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .menu-actions {
+      margin-top: 10px; /* Supaya Bahasa dan Masuk pindah ke bawah di layar kecil */
+    }
+  }
 
 .main-container {
     flex-grow: 1;
@@ -103,6 +145,7 @@ nav ul li:hover .dropdown {
     max-width: 800px;
     width: 100%;
     border: 2px solid #5b5bf0;
+    margin-top: 90px;
 }
 
 .question-card h2 {
@@ -197,7 +240,8 @@ nav ul li:hover .dropdown {
     display: block;
     margin-left: auto;
     margin-right:-30px;
-    transform:translateY(100px)
+    transform:translateY(100px);
+    margin-bottom: 10px;
 }
 
 footer {
