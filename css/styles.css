@@ -7,27 +7,28 @@ body {
 /* Kontainer utama */
 .container {
     max-width: 900px; /* Lebar maksimum kontainer */
+    width: 100%; /* Lebar 100% agar responsif */
+    height: 100%; /* Menetapkan tinggi kontainer ke 100% */
+    display: flex; /* Menggunakan flexbox */
+    justify-content: center; /* Mengatur konten di tengah */
+    align-items: center; /* Mengatur konten di tengah secara vertikal */
+    margin: 0 auto; /* Mengatur margin otomatis untuk pusat */
 }
 
 /* Gaya untuk gambar logo */
 img {
     border-radius: 10px 0 0 10px; /* Sudut melengkung */
+    width: 100%; /* Pastikan gambar responsif */
+    height: auto; /* Tinggi otomatis agar proporsional */
 }
 
-/* Gaya header selamat datang */
-.welcome-header {
-    font-family: 'Georgia', serif; /* Font untuk header */
-    font-size: 2.5rem; /* Ukuran font */
+/* Gaya header */
+.welcome-header, h2 {
+    font-family: Arial, sans-serif; /* Font untuk header */
+    font-size: 2rem; /* Ukuran font */
     font-weight: bold; /* Ketebalan font */
     letter-spacing: 1px; /* Jarak antar huruf */
-    text-transform: uppercase; /* Huruf kapital */
     color: #8e24aa; /* Warna header */
-}
-
-/* Gaya untuk elemen judul */
-h2, h1 {
-    font-family: 'Georgia', serif; /* Font untuk judul */
-    color: #8e24aa; /* Warna judul */
 }
 
 /* Gaya untuk tombol utama */
@@ -70,11 +71,6 @@ form a:hover {
 /* Gaya bayangan untuk kontainer */
 .shadow-lg {
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175); /* Bayangan */
-}
-
-/* Padding untuk elemen p-0 */
-p-0 {
-    padding: 0; /* Tanpa padding */
 }
 
 /* Gaya untuk kolom input */
