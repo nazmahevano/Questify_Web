@@ -9,31 +9,30 @@
 <body>
     
     <header>
-        <div class="logo">
-            <h1>Questify</h1>
+        <div class="navbar">
+          <div class="logo">
+            <a href="#">Questify</a>
+            <img src="assets/images/arcticons--flixquest.png" alt="logo" />
+          </div>
+          <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="semuakelas.html">Semua Kelas</a>
+            <a href="langganan.html">Langganan</a>
+            <a href="">Hasil Nilai</a>
+          </div>
+          <div class="menu-actions">
+            <a href="#bahasa"><span class="icon">🌐</span>Bahasa</a>
+            <a href="userprofile.html"><img src="assets/images/profil.png" alt="User Avatar" class="avatar" id="nav-avatar"></a> <!-- Membungkus gambar dalam tautan -->
+  
+            <!-- Membungkus gambar dalam tautan -->
+          </div>
+          <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="semua-kelas.html">Semua Kelas</a></li>
-                <li><a href="langganan.html">Langganan</a></li>
-                <li><a href="hasil-nilai.html">Hasil Nilai</a></li>
-                <li>
-                    <a href="english.html"><span class="icon">🌐</span>English</a>
-                    <!-- Dropdown menu -->
-                    <div class="dropdown">
-                        <a href="#">Indonesia</a>
-                        <a href="#">English</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-        <div class="profile">
-            <a href="userprofile.html">
-                <img src="profile-image-url.jpg" alt="Profil" class="profile-img"> <!-- ganti profil -->
-            </a>
-        </div>
-    </header>
+      </header>
 
     <!-- main container -->
     <div class="main-container">
