@@ -1,150 +1,119 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+/* Mengatur gaya umum untuk seluruh halaman */
 body {
-    height: 100vh;
-    display: flex;
-    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Warna latar belakang */
+    font-family: Arial, sans-serif; /* Font umum */
 }
 
+/* Kontainer utama */
 .container {
-    display: flex;
-    width: 100%;
-    height: 100%;
+    max-width: 900px; /* Lebar maksimum kontainer */
 }
 
-.image-container {
-    flex: 1;
-    background: linear-gradient(135deg, #EE9AE5, #5961F9);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
-    padding: 20px;
+/* Gaya untuk gambar logo */
+img {
+    border-radius: 10px 0 0 10px; /* Sudut melengkung */
 }
 
-.brand-title {
-    font-family: 'Josh', sans-serif;
-    font-weight: 800; /* Extra bold */
-    font-size: 3rem; /* Adjust as needed */
+/* Gaya header selamat datang */
+.welcome-header {
+    font-family: 'Georgia', serif; /* Font untuk header */
+    font-size: 2.5rem; /* Ukuran font */
+    font-weight: bold; /* Ketebalan font */
+    letter-spacing: 1px; /* Jarak antar huruf */
+    text-transform: uppercase; /* Huruf kapital */
+    color: #8e24aa; /* Warna header */
 }
 
-.brand-description {
-    font-family: 'Arial', sans-serif;
-    font-weight: 400; /* Regular */
-    font-size: 1.2rem; /* Adjust as needed */
-    text-align: center;
+/* Gaya untuk elemen judul */
+h2, h1 {
+    font-family: 'Georgia', serif; /* Font untuk judul */
+    color: #8e24aa; /* Warna judul */
 }
 
-.login-box {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 40px;
+/* Gaya untuk tombol utama */
+.btn-primary {
+    background-color: #8e24aa; /* Warna latar tombol */
+    border: none; /* Tanpa border */
+    border-radius: 5px; /* Sudut melengkung */
+    transition: background-color 0.3s, transform 0.2s; /* Transisi efek hover */
 }
 
-.input-box {
-    margin-bottom: 15px;
-    width: 60%;
+/* Efek hover untuk tombol utama */
+.btn-primary:hover {
+    background-color: #7b1fa2; /* Warna saat hover */
+    transform: scale(1.05); /* Membesar saat hover */
 }
 
-.input-field {
-    width: 100%;
-    height: 60px;
-    padding: 10px;
-    border: 2px solid #ccc; /* Light gray border */
-    outline: none; /* Remove default focus outline */
-    border-radius: 10px; 
-    font-size: 1rem;
-    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Smooth focus effect */
+/* Gaya untuk tombol Google */
+.btn-danger {
+    background-color: #db4437; /* Warna tombol Google */
+    border-radius: 5px; /* Sudut melengkung */
+    transition: background-color 0.3s, transform 0.2s; /* Transisi efek hover */
 }
 
-/* Style for input field when focused or has value */
-.input-field:focus,
-.input-field:not(:placeholder-shown) {
-    box-shadow: 0 0 5px rgba(142, 36, 170, 0.5); /* Focus shadow effect */
-    border-color: #8e24aa; /* Change border color on focus or if not empty */
+/* Efek hover untuk tombol Google */
+.btn-danger:hover {
+    background-color: #c13524; /* Warna saat hover */
+    transform: scale(1.05); /* Membesar saat hover */
 }
 
-/* Placeholder style */
-.input-field::placeholder {
-    color: #aaa; /* Light gray for placeholder text */
+/* Gaya untuk link di dalam form */
+form a {
+    color: #8e24aa; /* Warna link */
 }
 
-.input-submit {
-    text-align: left; /* Align submit button to the left */
-    margin-top: 20px;
-    width: 60%; /* Set width to match input fields */
+/* Efek hover untuk link */
+form a:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
 }
 
-.submit-btn {
-    width: 100%; /* Make the button take the full width */
-    background-color: #8e24aa;
-    color: white;
-    border: none;
-    padding: 12px; /* Increase padding for better height */
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+/* Gaya bayangan untuk kontainer */
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175); /* Bayangan */
 }
 
-.submit-btn:hover {
-    background-color: #7b1fa2;
+/* Padding untuk elemen p-0 */
+p-0 {
+    padding: 0; /* Tanpa padding */
 }
 
-.google-signin {
-    margin-top: 15px;
-    width: 60%; /* Set width to match input fields */
+/* Gaya untuk kolom input */
+.form-control {
+    border: 1px solid #ccc; /* Border abu-abu */
+    border-radius: 5px; /* Sudut melengkung */
+    transition: border-color 0.3s; /* Transisi warna border */
 }
 
-.google-btn {
-    width: 100%; /* Make the button take the full width */
-    background-color: #DB4437; /* Google red */
-    color: white;
-    border: none;
-    padding: 12px; /* Increase padding for better height */
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+/* Warna border saat input fokus */
+.form-control:focus {
+    border-color: #8e24aa; /* Warna border saat fokus */
+    box-shadow: 0 0 5px rgba(142, 36, 170, 0.5); /* Bayangan saat fokus */
 }
 
-.google-btn:hover {
-    background-color: #C13524; /* Darker red on hover */
+/* Menambahkan margin antara kolom */
+.mb-3 {
+    margin-bottom: 20px; /* Margin bawah untuk elemen */
 }
 
-.forgot-password {
-    text-align: left; /* Align text to the left */
-    font-size: 0.9rem;
-    margin-top: 10px; /* Add some space above */
+/* Gaya untuk elemen label input */
+.input-control {
+    position: relative; /* Untuk memposisikan label */
 }
 
-.login-header {
-    font-family: 'Josh', sans-serif;
-    font-weight: 600; /* Semi bold */
-    font-size: 2rem; /* Adjust as needed */
-    color: #8e24aa;
-    margin-bottom: 20px;
+.input-control label {
+    position: absolute; /* Memposisikan label */
+    top: 10px; /* Posisi atas */
+    left: 10px; /* Posisi kiri */
+    color: #aaa; /* Warna label */
+    transition: 0.2s; /* Transisi label */
+    pointer-events: none; /* Agar tidak mengganggu interaksi */
 }
 
-.welcome-message {
-    text-align: center;
-    margin-bottom: 20px; /* Add some space below the welcome message */
-}
-
-.name-inputs {
-    display: flex; /* Align name inputs horizontally */
-    justify-content: space-between;
-    width: 60%; /* Set width to match input fields */
-    margin-bottom: 15px; /* Space below name inputs */
-}
-
-.name-inputs .input-box {
-    width: 48%; /* Adjust width to fit two inputs in one row */
+/* Mengubah posisi label saat input fokus */
+.input-control input:focus + label,
+.input-control input:not(:placeholder-shown) + label {
+    top: -10px; /* Pindah ke atas */
+    left: 10px; /* Posisi kiri */
+    color: #8e24aa; /* Warna label saat aktif */
+    font-size: 0.9rem; /* Ukuran font saat aktif */
 }
