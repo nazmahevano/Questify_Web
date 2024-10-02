@@ -1,31 +1,26 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Register | Questify</title>
-</head>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Register Page</title>
+</head>    
 <body>
     <div class="container vh-100 d-flex justify-content-center align-items-center">
         <div class="row w-100 shadow-lg">
             <div class="col-md-6 d-none d-md-block p-0">
-                <img src="images/logo.jpg" alt="Questify Logo" class="img-fluid w-100 h-100" style="object-fit: cover;">
+                <img src="assets/images/logo.jpg" alt="Questify Logo" class="img-fluid w-100 h-100" style="object-fit: cover;">
             </div>
             <div class="col-md-6 bg-white p-4 d-flex flex-column justify-content-center">
-                <h1 class="welcome-header text-center mb-4">Halo, Selamat Datang di Questify</h1> <!-- Ganti Judul -->
+                <h2 class="text-center mb-4">Halo, Selamat Datang di Questify</h2>
                 <form>
-                    <div class="row mb-3">
-                        <div class="col-md-6 mb-3 mb-md-0">
-                            <input type="text" class="form-control" placeholder="Nama Depan" required>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Nama Belakang" required>
-                        </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Username" required>
                     </div>
                     <div class="mb-3">
-                        <input type="email" class="form-control" placeholder="Alamat Email" required>
+                        <input type="email" class="form-control" placeholder="Email" required>
                     </div>
                     <div class="mb-3">
                         <input type="password" class="form-control" placeholder="Password" required>
@@ -33,18 +28,16 @@
                     <div class="mb-3">
                         <input type="password" class="form-control" placeholder="Konfirmasi Password" required>
                     </div>
-                    <div class="d-grid">
+                    <div class="d-grid mb-3">
                         <button type="submit" class="btn btn-primary">Register</button>
                     </div>
-                    <div class="d-grid mt-3">
-                        <button class="btn btn-danger">Masuk dengan Google</button>
-                    </div>
                     <div class="text-center mt-3">
-                        <p>Sudah punya akun? <a href="login.html" class="text-decoration-none">Masuk di sini</a></p>
+                        <p>Sudah punya akun? <a href="login.html" class="text-decoration-none">Login</a></p>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
