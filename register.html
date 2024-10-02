@@ -2,46 +2,47 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>Register | Questify</title>
 </head>
 <body>
-    <div class="container">
-        <div class="image-container">
-            <h1 class="brand-title">Questify</h1>
-            <p class="brand-description">Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div class="login-box">
-            <div class="welcome-message">
-                <h1>Halo, Selamat Datang di Questify</h1>
+    <div class="container vh-100 d-flex justify-content-center align-items-center">
+        <div class="row w-100 shadow-lg">
+            <div class="col-md-6 d-none d-md-block p-0">
+                <img src="images/logo.jpg" alt="Questify Logo" class="img-fluid w-100 h-100" style="object-fit: cover;">
             </div>
-            <div class="name-inputs">
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Nama Depan" autocomplete="off" required>
-                </div>
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Nama Belakang" autocomplete="off" required>
-                </div>
-            </div>
-            <div class="input-box">
-                <input type="email" class="input-field" placeholder="Alamat Email" autocomplete="off" required>
-            </div>
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="Password" autocomplete="off" required>
-            </div>
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="Konfirmasi Password" autocomplete="off" required>
-            </div>
-            <div class="input-submit">
-                <button class="submit-btn" id="submit">Register</button>
-            </div>
-            <div class="google-signin">
-                <button class="google-btn">Masuk dengan Google</button>
-            </div>
-            <div class="sign-up-link">
-                <p>Sudah punya akun? <a href="login.html">Masuk di sini</a></p>
+            <div class="col-md-6 bg-white p-4 d-flex flex-column justify-content-center">
+                <h1 class="welcome-header text-center mb-4">Halo, Selamat Datang di Questify</h1> <!-- Ganti Judul -->
+                <form>
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <input type="text" class="form-control" placeholder="Nama Depan" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Nama Belakang" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Alamat Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" placeholder="Konfirmasi Password" required>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </div>
+                    <div class="d-grid mt-3">
+                        <button class="btn btn-danger">Masuk dengan Google</button>
+                    </div>
+                    <div class="text-center mt-3">
+                        <p>Sudah punya akun? <a href="login.html" class="text-decoration-none">Masuk di sini</a></p>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
