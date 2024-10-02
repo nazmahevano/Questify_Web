@@ -8,7 +8,7 @@ body {
 .container {
     max-width: 900px; /* Lebar maksimum kontainer */
     width: 100%; /* Lebar 100% agar responsif */
-    height: 100%; /* Menetapkan tinggi kontainer ke 100% */
+    height: 700px; /* Tetapkan tinggi yang konsisten untuk kontainer */
     display: flex; /* Menggunakan flexbox */
     justify-content: center; /* Mengatur konten di tengah */
     align-items: center; /* Mengatur konten di tengah secara vertikal */
@@ -89,27 +89,4 @@ form a:hover {
 /* Menambahkan margin antara kolom */
 .mb-3 {
     margin-bottom: 20px; /* Margin bawah untuk elemen */
-}
-
-/* Gaya untuk elemen label input */
-.input-control {
-    position: relative; /* Untuk memposisikan label */
-}
-
-.input-control label {
-    position: absolute; /* Memposisikan label */
-    top: 10px; /* Posisi atas */
-    left: 10px; /* Posisi kiri */
-    color: #aaa; /* Warna label */
-    transition: 0.2s; /* Transisi label */
-    pointer-events: none; /* Agar tidak mengganggu interaksi */
-}
-
-/* Mengubah posisi label saat input fokus */
-.input-control input:focus + label,
-.input-control input:not(:placeholder-shown) + label {
-    top: -10px; /* Pindah ke atas */
-    left: 10px; /* Posisi kiri */
-    color: #8e24aa; /* Warna label saat aktif */
-    font-size: 0.9rem; /* Ukuran font saat aktif */
 }
