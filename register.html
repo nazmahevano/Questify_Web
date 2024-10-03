@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css"> <!-- Pastikan jalur ini benar -->
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Register Page</title>
 </head>    
 <body>
-    <div class="container vh-100 d-flex justify-content-center align-items-center">
-        <div class="row w-100 shadow-lg">
+    <!-- Main content -->
+    <main class="container vh-100 d-flex justify-content-center align-items-center">
+        <section class="row w-100 shadow-lg">
+            <!-- Image section -->
             <div class="col-md-6 d-none d-md-block p-0">
                 <img src="assets/images/logo.jpg" alt="Questify Logo" class="img-fluid w-100 h-100" style="object-fit: cover;">
             </div>
+            
+            <!-- Registration form -->
             <div class="col-md-6 bg-white p-4 d-flex flex-column justify-content-center">
                 <h2 class="text-center mb-4">Halo, Selamat Datang di Questify</h2>
+                
                 <form>
                     <div class="mb-3">
                         <input type="text" class="form-control" placeholder="Username" required>
@@ -39,8 +45,9 @@
                     </div>
                 </form>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -10,126 +10,77 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <style>
-      .body {
-        background-color: #f5efff;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .navbar {
-        background-color: #f8f9fa;
-        padding: 10px 30px;
-      }
-
-      .navbar-brand {
-        font-weight: bold;
-        color: #4b4b4b;
-      }
-
-      .navbar-nav .nav-link {
-        color: #1c1c1e;
-        margin-right: 10px;
-      }
-
-      .nav-link.active {
-        color: #2c2cda;
-      }
-
-      .profile-pic {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-      }
-
-      .language-icon {
-        margin-right: 5px;
-      }
-
-      .center-nav {
-        flex-grow: 1;
-        justify-content: center;
-      }
-
-      .footer {
-        background-color: #343a40;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-        margin-top: auto;
-      }
-
-      /* Content Styling */
-      .content {
-        flex-grow: 1;
-        padding: 50px;
-      }
-
-
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="body">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid d-flex justify-content-between">
-        <!-- Brand -->
-        <a class="navbar-brand" href="#">Questify</a>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <body>
+    
+    <!-- Header -->
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid d-flex justify-content-between">
+          <a class="navbar-brand" href="#">Questify</a>
 
-        <div class="collapse navbar-collapse center-nav" id="navbarNav">
-          <!-- Nav Links -->
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="semuakelas.html">Semua Kelas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="langganan.html">Langganan</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="hasilnilai.html">Hasil Nilai</a>
-            </li>
-          </ul>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse center-nav" id="navbarNav">
+            <!-- Nav Links -->
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="semuakelas.html">Semua Kelas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="langganan.html">Langganan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="hasilnilai.html">Hasil Nilai</a>
+              </li>
+            </ul>
+
+            <!-- Bahasa dan Profile -->
+            <div class="d-flex align-items-center">
+              <img
+                src="assets/images/world-map.png"
+                alt="language"
+                class="language-icon"
+                style="width: 20px"
+              />
+              <span class="me-3">English</span>
+              <a href="userprofile.html">
+                <img
+                  src="assets/images/profil.png"
+                  alt="profile"
+                  class="profile-pic"
+                />
+              </a>
+            </div>
+          </div>
         </div>
-
-        <!-- Bahasa dan Profile -->
-        <div class="d-flex align-items-center">
-          <img
-            src="assets/images/world-map.png"
-            alt="language"
-            class="language-icon"
-            style="width: 20px"
-          />
-          <span class="me-3">English</span>
-          <a href="userprofile.html"> 
-            <img src="assets/images/profil.png" alt="profile" class="profile-pic" />
-          </a>        
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
     <!-- Main Content -->
-    <div class="container content">
+    <main class="container content">
       <div class="row justify-content-center">
         <div class="col-md-12">
-
-          <div class="card">
+          <section class="card">
             <div class="card-body">
-
               <div class="table-responsive">
                 <table class="table">
                   <thead class="table-dark">
@@ -153,7 +104,9 @@
                       <td>10</td>
                       <td>0</td>
                       <td>20 September 2024</td>
-                      <td><a href="#" class="btn btn-primary btn-sm">Review</a></td>
+                      <td>
+                        <a href="#" class="btn btn-primary btn-sm">Review</a>
+                      </td>
                     </tr>
                     <tr>
                       <td>2</td>
@@ -163,7 +116,9 @@
                       <td>10</td>
                       <td>0</td>
                       <td>21 September 2024</td>
-                      <td><a href="#" class="btn btn-primary btn-sm">Review</a></td>
+                      <td>
+                        <a href="#" class="btn btn-primary btn-sm">Review</a>
+                      </td>
                     </tr>
                     <tr>
                       <td>3</td>
@@ -173,7 +128,9 @@
                       <td>9</td>
                       <td>1</td>
                       <td>22 September 2024</td>
-                      <td><a href="#" class="btn btn-primary btn-sm">Review</a></td>
+                      <td>
+                        <a href="#" class="btn btn-primary btn-sm">Review</a>
+                      </td>
                     </tr>
                     <tr>
                       <td>4</td>
@@ -183,7 +140,9 @@
                       <td>9</td>
                       <td>1</td>
                       <td>23 September 2024</td>
-                      <td><a href="#" class="btn btn-primary btn-sm">Review</a></td>
+                      <td>
+                        <a href="#" class="btn btn-primary btn-sm">Review</a>
+                      </td>
                     </tr>
                     <tr>
                       <td>5</td>
@@ -193,7 +152,9 @@
                       <td>10</td>
                       <td>0</td>
                       <td>24 September 2024</td>
-                      <td><a href="#" class="btn btn-primary btn-sm">Review</a></td>
+                      <td>
+                        <a href="#" class="btn btn-primary btn-sm">Review</a>
+                      </td>
                     </tr>
                     <tr>
                       <td>6</td>
@@ -203,7 +164,9 @@
                       <td>8</td>
                       <td>2</td>
                       <td>25 September 2024</td>
-                      <td><a href="#" class="btn btn-primary btn-sm">Review</a></td>
+                      <td>
+                        <a href="#" class="btn btn-primary btn-sm">Review</a>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -218,12 +181,11 @@
                   <li class="page-item"><a class="page-link" href="#">3</a></li>
                 </ul>
               </nav>
-
             </div>
-          </div>
+          </section>
         </div>
       </div>
-    </div>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -237,6 +199,5 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-
   </body>
 </html>

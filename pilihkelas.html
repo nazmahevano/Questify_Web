@@ -3,492 +3,287 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Questify | Pilihan Kelas</title>
-    <!-- Menambahkan link Font Awesome untuk ikon -->
-    <style>
-      /* Mengatur tampilan dasar halaman */
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background-color: #f1d5e5;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        position: relative;
-      }
+    <title>Pilihan Kelas - Questify</title>
 
-      .header {
-        background-color: white;
-        width: 100%; /* Lebar penuh */
-        padding: 10px; /* Padding di dalam header */
-        text-align: center;
-        font-size: 24px;
-        color: black;
-      }
+    <!-- Menambahkan Bootstrap dan Font Awesome -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
 
-      /* Updated Navbar styles */
-      .navbar {
-        width: 100vw;
-        max-width: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: #ffff;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 5px 20px;
-        box-sizing: border-box;
-        z-index: 1000;
-      }
-
-      .logo {
-        font-size: 25px;
-        font-weight: bold;
-        display: flex;
-        align-items: center; /* Menyelaraskan logo dan gambar secara vertikal */
-      }
-
-      .logo img {
-        width: 30px;
-        height: auto;
-        margin-left: 5px; /* Mengurangi jarak ke kiri */
-      }
-
-      .menu {
-        display: flex;
-        flex-grow: 1; /* Memungkinkan menu untuk mengambil ruang yang tersisa */
-        justify-content: center; /* Menyeimbangkan menu di tengah */
-        gap: 20px; /* Jarak antar menu */
-      }
-
-      .navbar a {
-        color: #010851;
-        text-decoration: none;
-        padding: 14px 20px;
-      }
-
-      .navbar a:hover {
-        background-color: #dddddd65;
-        color: #ed80fd;
-      }
-
-      /* CSS untuk Bahasa dan Masuk */
-      .menu-actions {
-        display: flex;
-        align-items: center;
-        gap: 10px; /* Jarak antara Bahasa dan Masuk */
-      }
-
-      .menu-actions a {
-        color: #010851;
-        text-decoration: none;
-        font-weight: 500;
-      }
-
-      /* Tombol Masuk dengan style button */
-      .btn {
-        padding: 10px 20px;
-        border-radius: 25px;
-        text-decoration: none;
-        font-size: 16px;
-        cursor: pointer;
-      }
-
-      .btn-primary {
-        background-color: #9fa3f1;
-        color: white;
-      }
-
-      .btn-primary:hover {
-        background-color: #2a308b;
-      }
-
-      /* Gaya untuk avatar */
-      .avatar {
-        width: 40px; /* Ukuran avatar */
-        height: 40px; /* Ukuran avatar */
-        border-radius: 50%; /* Membuat bulat */
-        cursor: pointer; /* Mengubah kursor saat hover */
-        object-fit: cover; /* Memastikan gambar tetap proporsional */
-      }
-
-      /* Responsif untuk layar kecil */
-      @media (max-width: 768px) {
-        .navbar {
-          flex-wrap: wrap; /* Mengizinkan konten membungkus di layar kecil */
-        }
-
-        .menu {
-          flex-wrap: wrap;
-          gap: 15px;
-        }
-
-        .menu-actions {
-          margin-top: 10px; /* Supaya Bahasa dan Masuk pindah ke bawah di layar kecil */
-        }
-      }
-
-      .logo h1 {
-        font-size: 24px;
-        color: #5b5bf0; /* Questify logo color */
-        font-weight: bold;
-      }
-
-      nav {
-        position: relative;
-      }
-
-      nav ul {
-        list-style-type: none;
-        display: flex;
-        gap: 30px;
-      }
-
-      nav ul li {
-        display: inline;
-      }
-
-      nav ul li a {
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: bold;
-        color: #5b5bf0;
-      }
-
-      nav ul li a:hover {
-        color: #333; /* Changes color when hovered */
-      }
-
-      .profile-img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 2px solid #ccc;
-      }
-
-      .hamburger {
-        display: none; /* Hidden by default */
-        flex-direction: column;
-        cursor: pointer;
-      }
-
-      .line {
-        height: 3px;
-        width: 25px;
-        background-color: #5b5bf0;
-        margin: 3px 0;
-      }
-
-      .header {
-        background-color: white;
-        width: 100%; /* Lebar penuh */
-        padding: 10px; /* Padding di dalam header */
-        text-align: center;
-        font-size: 24px;
-        color: black;
-      }
-
-      h1 {
-        font-size: 36px;
-        color: #333;
-        margin-bottom: 2px;
-        text-align: center;
-      }
-
-      h2 {
-        font-size: 28px;
-        color: #333;
-        margin-bottom: 50px;
-        text-align: center;
-      }
-
-      .container-kelas {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 kolom */
-        gap: 30px;
-        justify-content: center;
-        margin-bottom: 50px;
-      }
-
-      .kelas-card {
-        background: linear-gradient(180deg, #e9e6f1, #9675d3);
-        border: none;
-        border-radius: 10px;
-        padding: 20px;
-        width: 250px;
-        text-align: center;
-        color: white;
-        position: relative; /* Agar label bisa berada di pojok kiri bawah */
-        transition: transform 0.3s, box-shadow 0.3s;
-        margin-bottom: 20px;
-        text-decoration: none; /* Remove underline from the link */
-      }
-
-      .kelas-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-      }
-
-      /* Judul utama di dalam kotak */
-      .kelas-title {
-        font-size: 24px;
-        margin-bottom: 10px;
-      }
-
-      /* Judul kecil */
-      .kelas-subtitle {
-        font-size: 18px;
-        margin-bottom: 10px;
-        font-weight: bold;
-      }
-
-      /* Kontainer untuk ikon dan deskripsi kecil */
-      .ikon-container {
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: 20px;
-        font-size: 50px;
-      }
-
-      /* Deskripsi kecil di bawah ikon */
-      .ikon-deskripsi {
-        font-size: 14px;
-        margin-top: 5px;
-      }
-
-      /* Label gratis atau berbayar */
-      .label-kelas {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        padding: 5px 10px;
-        border-radius: 5px;
-        color: white;
-        font-size: 12px;
-      }
-
-      .gratis {
-        background-color: yellow;
-        color: black;
-      }
-
-      .berbayar {
-        background-color: green;
-      }
-
-      /* Gaya untuk pagination (nomor halaman) */
-      .pagination {
-        position: absolute;
-        bottom: 50px;
-        left: 20px;
-        display: flex;
-      }
-
-      .pagination .page-number {
-        width: 30px;
-        height: 30px;
-        border: 2px solid blue;
-        background-color: white;
-        color: blue;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-
-      .pagination .page-number:hover {
-        background-color: #e6f0ff;
-      }
-
-      .pagination .active {
-        background-color: blue;
-        color: white;
-      }
-
-      footer {
-        background-color: rgb(7, 7, 100);
-        color: white;
-        text-align: center;
-        padding: 10px;
-        width: 100%;
-        margin-top: auto;
-      }
-
-      @media (max-width: 768px) {
-        h1 {
-          font-size: 28px;
-        }
-
-        .kelas-card {
-          width: 200px;
-        }
-
-        nav ul {
-          display: none;
-          flex-direction: column;
-          position: absolute;
-          background-color: white;
-          right: 0;
-          top: 60px;
-          width: 100%;
-          padding: 10px 0;
-          border: 1px solid #ccc;
-          z-index: 10;
-        }
-
-        nav ul.active {
-          display: flex;
-        }
-
-        .hamburger {
-          display: flex;
-        }
-      }
-
-      @media (max-width: 480px) {
-        h1 {
-          font-size: 24px;
-          margin-bottom: 20px;
-        }
-
-        .kelas-card {
-          width: 100%;
-          margin-bottom: 10px;
-        }
-
-        .pagination {
-          bottom: 0px;
-          gap: 5px;
-        }
-
-        .pagination .page-number {
-          width: 25px;
-          height: 25px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pilihkelas.css" />
   </head>
   <body>
-    <!-- Navbar -->
-    <!-- Updated Header -->
+    <!-- Header -->
     <header>
-      <div class="navbar">
-        <div class="logo">
-          <a href="#">Questify</a>
-          <img src="assets/images/arcticons--flixquest.png" alt="logo" />
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid d-flex justify-content-between">
+          <a class="navbar-brand" href="#">Questify</a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse center-nav" id="navbarNav">
+            <!-- Nav Links -->
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="semuakelas.html">Semua Kelas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="langganan.html">Langganan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="hasilnilai.html">Hasil Nilai</a>
+              </li>
+            </ul>
+
+            <!-- Bahasa dan Profile -->
+            <div class="d-flex align-items-center">
+              <img
+                src="assets/images/world-map.png"
+                alt="language"
+                class="language-icon"
+                style="width: 20px"
+              />
+              <span class="me-3">English</span>
+              <a href="userprofile.html">
+                <img
+                  src="assets/images/profil.png"
+                  alt="profile"
+                  class="profile-pic"
+                />
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="menu">
-          <a href="index.html">Home</a>
-          <a href="semuakelas.html">Semua Kelas</a>
-          <a href="langganan.html">Langganan</a>
-          <a href="">Hasil Nilai</a>
-        </div>
-        <div class="menu-actions">
-          <a href="#bahasa"><span class="icon">🌐</span>Bahasa</a>
-          <a href="userprofile.html"
-            ><img
-              src="assets/images/profil.png"
-              alt="User Avatar"
-              class="avatar"
-              id="nav-avatar"
-          /></a>
-          <!-- Membungkus gambar dalam tautan -->
-        </div>
-        <div class="hamburger" onclick="toggleMenu()">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-        </div>
-      </div>
+      </nav>
     </header>
 
-    <h1>Kelas Basic</h1>
-    <h2>Ayo selesaikan tantangannya</h2>
+    <!-- Main content -->
+    <main class="container text-center my-5">
+      <h1>Kelas Basic</h1>
+      <h2>Ayo selesaikan tantangannya</h2>
 
-    <div class="container-kelas">
-      <!-- Menambahkan semua kelas yang ada -->
-      <a href="detailkelas.html" class="kelas-card">
-        <h2 class="kelas-title">Kelas Basic 1</h2>
-        <div class="ikon-container">
-          <div>
-            <i class="fas fa-book"></i>
-            <p class="ikon-deskripsi">10 Soal</p>
-          </div>
-          <div>
-            <i class="fas fa-clock"></i>
-            <p class="ikon-deskripsi">10 Menit</p>
-          </div>
-        </div>
-        <div class="label-kelas gratis">Gratis</div>
-      </a>
+      <!-- Kontainer kelas -->
+      <section class="row g-4">
+        <article class="col-md-4">
+          <a href="detailkelas.html" class="text-decoration-none">
+            <div class="kelas-card">
+              <h2 class="kelas-title">Kelas Basic 1</h2>
+              <div class="d-flex justify-content-around">
+                <div>
+                  <img
+                    src="assets/images/soal.png"
+                    alt="Soal"
+                    class="icon"
+                    style="width: 60px"
+                  />
+                  <p class="ikon-deskripsi">10 Soal</p>
+                </div>
+                <div>
+                  <img
+                    src="assets/images/waktu.png"
+                    alt="Waktu"
+                    class="icon"
+                    style="width: 60px"
+                  />
+                  <p class="ikon-deskripsi">10 Menit</p>
+                </div>
+              </div>
+              <div class="label-kelas gratis">Gratis</div>
+            </div>
+          </a>
+        </article>
 
-      <a href="detailkelas.html" class="kelas-card">
-        <h2 class="kelas-title">Kelas Basic 2</h2>
-        <div class="ikon-container">
-          <div>
-            <i class="fas fa-book"></i>
-            <p class="ikon-deskripsi">15 Soal</p>
-          </div>
-          <div>
-            <i class="fas fa-clock"></i>
-            <p class="ikon-deskripsi">15 Menit</p>
-          </div>
-        </div>
-        <div class="label-kelas berbayar">Berbayar</div>
-      </a>
+        <article class="col-md-4">
+          <a href="detailkelas.html" class="text-decoration-none">
+            <div class="kelas-card">
+              <h2 class="kelas-title">Kelas Basic 2</h2>
+              <div class="d-flex justify-content-around">
+                <div>
+                  <img
+                    src="assets/images/soal.png"
+                    alt="Soal"
+                    class="icon"
+                    style="width: 60px"
+                  />
+                  <p class="ikon-deskripsi">10 Soal</p>
+                </div>
+                <div>
+                  <img
+                    src="assets/images/waktu.png"
+                    alt="Waktu"
+                    class="icon"
+                    style="width: 60px"
+                  />
+                  <p class="ikon-deskripsi">10 Menit</p>
+                </div>
+              </div>
+              <div class="label-kelas gratis">Gratis</div>
+            </div>
+          </a>
+        </article>
 
-      <a href="detailkelas.html" class="kelas-card">
-        <h2 class="kelas-title">Kelas Basic 3</h2>
-        <div class="ikon-container">
-          <div>
-            <i class="fas fa-book"></i>
-            <p class="ikon-deskripsi">20 Soal</p>
-          </div>
-          <div>
-            <i class="fas fa-clock"></i>
-            <p class="ikon-deskripsi">20 Menit</p>
-          </div>
-        </div>
-        <div class="label-kelas berbayar">Berbayar</div>
-      </a>
+        <article class="col-md-4">
+          <a href="detailkelas.html" class="text-decoration-none">
+            <div class="kelas-card">
+              <h2 class="kelas-title">Kelas Basic 3</h2>
+              <div class="d-flex justify-content-around">
+                <div>
+                  <img
+                    src="assets/images/soal.png"
+                    alt="Soal"
+                    class="icon"
+                    style="width: 60px"
+                  />
+                  <p class="ikon-deskripsi">10 Soal</p>
+                </div>
+                <div>
+                  <img
+                    src="assets/images/waktu.png"
+                    alt="Waktu"
+                    class="icon"
+                    style="width: 60px"
+                  />
+                  <p class="ikon-deskripsi">10 Menit</p>
+                </div>
+              </div>
+              <div class="label-kelas gratis">Gratis</div>
+            </div>
+          </a>
+        </article>
 
-      <a href="detailkelas.html" class="kelas-card">
-        <h2 class="kelas-title">Kelas Basic 4</h2>
-        <div class="ikon-container">
-          <div>
-            <i class="fas fa-book"></i>
-            <p class="ikon-deskripsi">25 Soal</p>
-          </div>
-          <div>
-            <i class="fas fa-clock"></i>
-            <p class="ikon-deskripsi">25 Menit</p>
-          </div>
-        </div>
-        <div class="label-kelas gratis">Gratis</div>
-      </a>
-    </div>
+        <article class="col-md-4">
+          <a href="detailkelas.html" class="text-decoration-none">
+            <div class="kelas-card">
+              <h2 class="kelas-title">Kelas Basic 4</h2>
+              <div class="d-flex justify-content-around">
+                <div>
+                  <img
+                    src="assets/images/soal.png"
+                    alt="Soal"
+                    class="icon"
+                    style="width: 60px"
+                  />
+                  <p class="ikon-deskripsi">10 Soal</p>
+                </div>
+                <div>
+                  <img
+                    src="assets/images/waktu.png"
+                    alt="Waktu"
+                    class="icon"
+                    style="width: 60px"
+                  />
+                  <p class="ikon-deskripsi">10 Menit</p>
+                </div>
+              </div>
+              <div class="label-kelas berbayar">Berbayar</div>
+            </div>
+          </a>
+        </article>
 
-    <div class="pagination">
-      <div class="page-number active">1</div>
-      <div class="page-number">2</div>
-      <div class="page-number">3</div>
-    </div>
+        <article class="col-md-4">
+          <a href="detailkelas.html" class="text-decoration-none">
+            <div class="kelas-card">
+              <h2 class="kelas-title">Kelas Basic 5</h2>
+              <div class="d-flex justify-content-around">
+                <div>
+                  <img
+                    src="assets/images/soal.png"
+                    alt="Soal"
+                    class="icon"
+                    style="width: 60px"
+                  />
+                  <p class="ikon-deskripsi">10 Soal</p>
+                </div>
+                <div>
+                  <img
+                    src="assets/images/waktu.png"
+                    alt="Waktu"
+                    class="icon"
+                    style="width: 60px"
+                  />
+                  <p class="ikon-deskripsi">10 Menit</p>
+                </div>
+              </div>
+              <div class="label-kelas berbayar">Berbayar</div>
+            </div>
+          </a>
+        </article>
 
-    <footer>
-      <p>&copy; Questify All rights reserved</p>
+        <article class="col-md-4">
+          <a href="detailkelas.html" class="text-decoration-none">
+            <div class="kelas-card">
+              <h2 class="kelas-title">Kelas Basic 6</h2>
+              <div class="d-flex justify-content-around">
+                <div>
+                  <img
+                    src="assets/images/soal.png"
+                    alt="Soal"
+                    class="icon"
+                    style="width: 60px"
+                  />
+                  <p class="ikon-deskripsi">10 Soal</p>
+                </div>
+                <div>
+                  <img
+                    src="assets/images/waktu.png"
+                    alt="Waktu"
+                    class="icon"
+                    style="width: 60px"
+                  />
+                  <p class="ikon-deskripsi">10 Menit</p>
+                </div>
+              </div>
+              <div class="label-kelas berbayar">Berbayar</div>
+            </div>
+          </a>
+        </article>
+      </section>
+
+      <!-- Pagination -->
+      <nav
+        aria-label="Page navigation"
+        class="d-flex justify-content-center mt-4"
+      >
+        <ul class="pagination">
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+        </ul>
+      </nav>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Questify. All Rights Reserved.</p>
+      </div>
     </footer>
 
-    <!-- Menambahkan JavaScript untuk toggle menu hamburger -->
-    <script>
-      function toggleMenu() {
-        const navLinks = document.getElementById("nav-links");
-        navLinks.classList.toggle("active");
-      }
-    </script>
+    <!-- Menambahkan Bootstrap JS dan Popper.js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
