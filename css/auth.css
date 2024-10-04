@@ -1,23 +1,18 @@
-/* Mengatur gaya umum untuk seluruh halaman */
-body {
-    background-color: #f8f9fa; /* Warna latar belakang */
-    font-family: Arial, sans-serif; /* Font umum */
-}
-
 /* Kontainer utama */
 .container {
-    max-width: 900px; /* Lebar maksimum kontainer */
-    width: 100%; /* Lebar 100% agar responsif */
-    height: 700px; /* Tetapkan tinggi yang konsisten untuk kontainer */
-    display: flex; /* Menggunakan flexbox */
+    width: 900px; 
+    height: 500px; 
+    display: flex; 
     justify-content: center; /* Mengatur konten di tengah */
     align-items: center; /* Mengatur konten di tengah secara vertikal */
-    margin: 0 auto; /* Mengatur margin otomatis untuk pusat */
+    margin: 0 auto; /* Pusatkan kontainer */
+    overflow: hidden; /* Mencegah konten yang meluap ditampilkan */
+    resize: none; 
+    border-radius: 10px; /* Menambahkan sudut melengkung pada kontainer */
 }
 
 /* Gaya untuk gambar logo */
 img {
-    border-radius: 10px 0 0 10px; /* Sudut melengkung */
     width: 100%; /* Pastikan gambar responsif */
     height: auto; /* Tinggi otomatis agar proporsional */
 }
