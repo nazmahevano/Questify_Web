@@ -1,12 +1,8 @@
-
 /* Kontainer utama */
 .container {
     max-width: 900px; /* Lebar maksimum kontainer */
     width: 100%; /* Lebar 100% agar responsif */
-    height: 700px; /* Tetapkan tinggi yang konsisten untuk kontainer */
-    display: flex; /* Menggunakan flexbox */
-    justify-content: center; /* Mengatur konten di tengah */
-    align-items: center; /* Mengatur konten di tengah secara vertikal */
+    height: 600px; /* Tetapkan tinggi yang konsisten untuk kontainer */
     margin: 0 auto; /* Mengatur margin otomatis untuk pusat */
 }
 
@@ -18,7 +14,7 @@ img {
 }
 
 /* Gaya header */
-.welcome-header, h2 {
+h2 {
     font-family: Arial, sans-serif; /* Font untuk header */
     font-size: 2rem; /* Ukuran font */
     font-weight: bold; /* Ketebalan font */
