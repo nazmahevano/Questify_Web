@@ -204,6 +204,8 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   min-height: 50vh;
+  margin-top: 5dvw;
+  margin-bottom: 5dvw;
 }
 
 .benefit-content h2 {
@@ -479,6 +481,23 @@ body {
 
 .contact-form {
   margin-top: 50px;
+}
+
+/* Heading Styling */
+.kontak-title, .kontak-subtitle {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.kontak-title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.kontak-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px; /* Memberi jarak antara h3 dan form card */
 }
 
 /* Form Card Styling */
