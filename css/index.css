@@ -406,7 +406,7 @@ body {
   border: 2px solid violet;
   width: 100%;
 }
-
+/* ================================================================================================ */
 /*  css motivasi */
 
 .motivational-card {
@@ -428,7 +428,7 @@ body {
   color: white;
   text-decoration: none; /* Menghapus underline pada link */
   padding: 40px;
-  width: 100vh; /* Gunakan lebar penuh satu layar */
+  width: 100%; /* Gunakan lebar penuh satu layar */
   max-width: 100vh; /* Pastikan batas maksimal lebar layar */
   height: 20rem; /* Tetapkan tinggi tetap */
 }
@@ -472,33 +472,80 @@ body {
 }
 /* ================================================================================================ */
 /* css form contact us */
-.card {
-  background-color: #eab8f1; /* Warna latar belakang kartu */
-  border: none; /* Menghapus border kartu */
-  border-radius: 15px; /* Radius sudut kartu */
+/* General Styling */
+body {
+  background-color: #f0f0f0;
 }
 
-h1 {
-  font-weight: bold; /* Menebalkan teks judul */
-  text-align: center; /* Memusatkan teks */
-}
-p{
-  font-size: medium;
-  text-align: center;
+.contact-form {
+  margin-top: 50px;
 }
 
-.form-control {
-  margin-bottom: 1rem; /* Jarak antara elemen form */
+/* Form Card Styling */
+.form-card {
+  width: 500px; /* Ukuran form diperbesar */
+  background-color: #f9c2ed;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.btn-primary {
-  background-color: #007bff; /* Warna tombol */
-  border: none; /* Menghapus border tombol */
+/* Form Group Styling */
+.form-group {
+  display: flex;
+  align-items: center; /* Posisi ikon dan label sejajar vertikal */
+  gap: 15px; /* Jarak antara icon, label, dan input */
+  position: relative;
 }
 
-.btn-primary:hover {
-  background-color: #0056b3; /* Warna tombol saat hover */
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
 }
+
+label.form-label {
+  flex: 1; /* Label mengisi ruang di antara ikon dan input */
+  font-size: 16px; /* Ukuran teks pada label */
+}
+
+/* Konsistensi Ukuran Input dan Textarea */
+input.form-control, textarea.form-control {
+  flex: 3; /* Input menyesuaikan dengan lebar label */
+  padding: 10px;
+  background-color: #ffe4ff;
+  border: none;
+  border-bottom: 1px solid #333;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 16px;
+  width: 100%; /* Lebar seragam */
+  margin-left: auto; /* Menghindari tumpang tindih */
+}
+
+textarea.form-control {
+  height: 100px; /* Tinggi textarea tetap */
+  resize: none; /* Mencegah perubahan ukuran */
+}
+
+.form-control::placeholder {
+  color: #666;
+}
+
+/* Button Styling */
+button.btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: white;
+  border: 1px solid black;
+  font-size: 18px; /* Teks lebih besar */
+  transition: background-color 0.3s ease;
+}
+
+button.btn:hover {
+  background-color: #ddd;
+}
+
 
 /* ================================================================================================= */
 /* Footer styles */
@@ -562,25 +609,4 @@ footer {
 
 .footer-bottom strong {
   color: #3498db;
-}
-
-/* Responsif untuk layar yang lebih kecil */
-@media screen and (max-width: 768px) {
-  .card-harga {
-    width: 45%; /* Lebar kartu disesuaikan pada layar lebih kecil */
-  }
-
-  .harga {
-    font-size: 1.5em;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .card-harga {
-    width: 90%; /* Lebar kartu penuh pada layar sangat kecil */
-  }
-
-  .harga {
-    font-size: 1.2em;
-  }
 }
