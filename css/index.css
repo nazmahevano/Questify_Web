@@ -204,8 +204,8 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   min-height: 50vh;
-  margin-top: 5dvw;
-  margin-bottom: 5dvw;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
 }
 
 .benefit-content h2 {
@@ -235,8 +235,8 @@ body {
 }
 
 .benefit-box img {
-  width: 100px; /* Ukuran tetap untuk gambar */
-  height: auto; /* Gambar tetap proporsional */
+  width: 100px;
+  height: auto;
 }
 
 .benefit-box h3 {
@@ -244,6 +244,18 @@ body {
   font-weight: bold;
   color: #010851;
 }
+
+/* Animasi dropdown untuk benefit-boxes */
+.benefit-boxes {
+  display: none; /* Disembunyikan secara default */
+  transition: max-height 0.5s ease-in-out;
+}
+
+.benefit-boxes.show {
+  display: flex; /* Tampilkan flex layout */
+}
+
+
 /*===================================================================================================================================== */
 /* css about-us */
 /* Kustomisasi untuk bagian Tentang Kami */
