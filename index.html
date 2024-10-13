@@ -194,24 +194,6 @@
         </div>
       </section>
 
-      <script>
-        // Toggle untuk menampilkan/menyembunyikan paragraf di bawah h2
-        document
-          .getElementById("toggleFeatures")
-          .addEventListener("click", function () {
-            var content = document.getElementById("content");
-            var arrow = document.getElementById("arrow");
-
-            if (content.style.display === "none") {
-              content.style.display = "block"; // Menampilkan konten (paragraf)
-              arrow.innerHTML = "&#9650;"; // Mengubah panah ke atas
-            } else {
-              content.style.display = "none"; // Menyembunyikan konten
-              arrow.innerHTML = "&#9660;"; // Mengubah panah ke bawah
-            }
-          });
-      </script>
-
       <!-- About Us Section -->
       <section id="about" class="about-us container mt-5 p-5">
         <div class="row align-items-center">
@@ -465,5 +447,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/index.js"></script>
+    
   </body>
 </html>
