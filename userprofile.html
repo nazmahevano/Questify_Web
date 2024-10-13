@@ -14,44 +14,55 @@
   <body>
     <!-- Header -->
     <header>
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid d-flex justify-content-between">
-          <a class="navbar-brand" href="#">Questify</a>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed">
+        <div class="container-fluid">
+          <!-- Logo and Questify Text -->
+          <a
+            class="navbar-brand d-flex align-items-center fs-0 fw-bold"
+            href="#"
+          >
+            Questify
+            <img
+              src="assets/images/arcticons--flixquest.png"
+              alt="logo"
+              class="ms-2"
+              width="30"
+              height="30"
+            />
+          </a>
 
+          <!-- Toggler for mobile view -->
           <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse center-nav" id="navbarNav">
-            <!-- Nav Links -->
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
-                  >Home</a
-                >
+          <!-- Navbar items -->
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0">
+              <li class="nav-item mx-3">
+                <a class="nav-link" href="index.html">Home</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item mx-2">
                 <a class="nav-link" href="semuakelas.html">Semua Kelas</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="langganan.html">Langganan</a>
+              <li class="nav-item mx-3">
+                <a class="nav-link" href="#">Langganan</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item mx-3">
                 <a class="nav-link" href="hasilnilai.html">Hasil Nilai</a>
               </li>
             </ul>
 
-            <!-- Bahasa dan Profile -->
-            <div class="d-flex align-items-center">
+            <!-- Bahasa and Masuk for desktop view -->
+            <div class="d-none d-lg-flex align-items-center">
               <img
                 src="assets/images/world-map.png"
                 alt="language"
@@ -67,6 +78,33 @@
                 />
               </a>
             </div>
+
+            <!-- Dropdown for mobile view -->
+            <ul class="navbar-nav d-lg-none">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Lainnya
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Bahasa</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a
+                      class="dropdown-item btn btn-outline-primary"
+                      href="userprofile.html"
+                      >Profile</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -76,7 +114,7 @@
     <main class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-md-12 mb-5">
-          <section class="card">
+          <section class="card" style="margin-top: 100px">
             <div class="card-body">
               <section>
                 <ul

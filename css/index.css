@@ -1,47 +1,9 @@
 /* CSS Global untuk font */
-body {
+.body {
   margin: 5px;
   font-family: 'Jost', sans-serif; /* Diterapkan secara global */
 }
 
-/* Navbar Styling */
-.navbar {
-  width: 100vw;
-  max-width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 20px;
-  box-sizing: border-box;
-  z-index: 1000;
-  font-weight: bold;
-}
-
-.navbar a {
-  color: #010851;
-  text-decoration: none;
-  padding: 14px 20px;
-}
-
-.navbar a:hover {
-  background-color: #dddddd65;
-  color: #ed80fd;
-}
-
-.logo {
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.logo img {
-  width: 30px;
-  height: auto;
-  margin-left: -25px;
-}
 
 /* Menu Styling */
 .menu {
