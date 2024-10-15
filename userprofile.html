@@ -14,7 +14,7 @@
   <body>
     <!-- Header -->
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed w-100">
         <div class="container-fluid">
           <!-- Logo and Questify Text -->
           <a
@@ -75,6 +75,7 @@
                   src="assets/images/profil.png"
                   alt="profile"
                   class="profile-pic"
+                  style="width: 30px; height: 30px"
                 />
               </a>
             </div>
@@ -261,9 +262,18 @@
     <script>
       function loadFile(event) {
         var output = document.getElementById("output");
+        var navbarProfilePic = document.querySelector('.profile-pic');
+
+        // Ubah foto profil di form dan navbar
         output.src = URL.createObjectURL(event.target.files[0]);
+        navbarProfilePic.src = URL.createObjectURL(event.target.files[0]);
+
+        // Revoke URL setelah image di-load
         output.onload = function () {
           URL.revokeObjectURL(output.src);
+        };
+        navbarProfilePic.onload = function () {
+          URL.revokeObjectURL(navbarProfilePic.src);
         };
       }
     </script>
