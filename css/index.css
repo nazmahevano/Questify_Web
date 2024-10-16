@@ -260,18 +260,18 @@
 /* Gaya untuk container utama */
 .container-harga {
   text-align: center;
-  margin-bottom: 50px; /* Tambahkan margin bawah untuk jarak antar seksi */
+  margin-bottom: 50px; /* Tambahkan margin bawah untuk jarak antar sesi */
 }
 
 /* Gaya untuk judul dan subjudul */
-.judul-seksi {
+.judul-sesi {
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 10px;
   color: rgb(7, 7, 100);
 }
 
-.subjudul-seksi {
+.subjudul-sesi {
   font-size: 18px;
   color: #555;
   margin-bottom: 30px;
@@ -425,11 +425,11 @@
     font-size: 24px; /* Perkecil ukuran font di layar kecil */
   }
   
-  .judul-seksi {
+  .judul-sesi {
     font-size: 28px; /* Sesuaikan ukuran font di layar kecil */
   }
   
-  .subjudul-seksi {
+  .subjudul-sesi {
     font-size: 16px; /* Sesuaikan ukuran font di layar kecil */
   }
 
