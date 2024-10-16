@@ -115,13 +115,14 @@
       </nav>
     </header>
 
-    <!-- Main content -->
+    <!-- Main content menggunakan container Bootstrap dan text-center untuk align -->
     <main class="container text-center my-5">
       <h1 style="margin-top: 60px"><strong>Kelas Basic</strong></h1>
       <h2>Ayo selesaikan tantangannya</h2>
 
-      <!-- Kontainer kelas -->
+      <!-- Kontainer kelas, Section untuk card kelas, menggunakan grid system Bootstrap -->
       <section class="row g-4">
+        <!-- Artikel menggunakan col-md-4 dari Bootstrap untuk membagi menjadi 3 kolom pada layar medium ke atas -->
         <article class="col-md-4">
           <a href="detailkelas.html" class="text-decoration-none">
             <div class="kelas-card">
@@ -150,7 +151,7 @@
             </div>
           </a>
         </article>
-
+        
         <article class="col-md-4">
           <a href="detailkelas.html" class="text-decoration-none">
             <div class="kelas-card">
@@ -297,10 +298,10 @@
         </article>
       </section>
 
-      <!-- Pagination -->
+      <!-- Pagination menggunakan komponen pagination dari Bootstrap -->
       <nav
         aria-label="Page navigation"
-        class="d-flex justify-content-center mt-4"
+        class="d-flex content-left mt-4"
       >
         <ul class="pagination">
           <li class="page-item active"><a class="page-link" href="#">1</a></li>
