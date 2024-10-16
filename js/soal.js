@@ -1,80 +1,73 @@
 const questions = [
   {
-    question:
-      "Andi memiliki 5 apel. Kemudian, ibunya memberi 7 apel lagi. Berapa jumlah apel Andi sekarang?",
-    options: ["10 apel", "12 apel", "13 apel", "14 apel"],
-    answer: "12 apel",
+    question: 'Andi memiliki 5 apel. Kemudian, ibunya memberi 7 apel lagi. Berapa jumlah apel Andi sekarang?',
+    options: ['10 apel', '12 apel', '13 apel', '14 apel'],
+    answer: '12 apel'
   },
   {
-    question:
-      "Budi memiliki 8 pensil. Jika ia memberi 3 pensil kepada temannya, berapa pensil yang tersisa?",
-    options: ["5 pensil", "6 pensil", "4 pensil", "7 pensil"],
-    answer: "5 pensil",
+    question: 'Budi memiliki 8 pensil. Jika ia memberi 3 pensil kepada temannya, berapa pensil yang tersisa?',
+    options: ['5 pensil', '6 pensil', '4 pensil', '7 pensil'],
+    answer: '5 pensil'
   },
   {
-    question: "Berapa jumlah sudut pada balok?",
-    options: ["4", "6", "8", "10"],
-    answer: "8",
-  },
+    question: 'Berapa jumlah sudut pada balok?',
+    options: ['4', '6', '8', '10'],
+    answer: '8'
+  }
 ];
 
 let currentQuestionIndex = 0;
 
-// Fungsi untuk menampilkan soal
+//  menampilkan soal
 function loadQuestion(index) {
-  const questionText = document.querySelector("h4");
-  const questionParagraph = document.querySelector("main p");
-  const options = document.querySelectorAll(".btn-outline-secondary");
-
-  questionText.textContent = `Soal nomor: ${index + 1}`;
-  questionParagraph.textContent = questions[index].question;
-  options.forEach((option, i) => {
-    option.textContent = questions[index].options[i];
+  $('h4').text(`Soal nomor: ${index + 1}`);
+  $('main p').text(questions[index].question);
+  $('.btn-outline-secondary').each(function (i) {
+    $(this).text(questions[index].options[i]);
   });
 }
 
-// Fungsi untuk memilih jawaban
-function selectAnswer(optionId) {
-  const options = document.querySelectorAll(".btn-outline-secondary");
-  options.forEach((option) => option.classList.remove("active"));
-
-  // Tambahkan kelas 'active' ke tombol yang dipilih
-  const selectedOption = document.getElementById(optionId);
-  selectedOption.classList.add("active");
+//  untuk memilih jawaban
+function selectAnswer() {
+  $('.btn-outline-secondary').removeClass('active');
+  $(this).addClass('active');
 }
 
-// Fungsi untuk melanjutkan ke soal berikutnya
+//  melanjutkan ke soal berikutnya
 function nextQuestion() {
-  const selectedOption = document.querySelector(
-    ".btn-outline-secondary.active"
-  );
-  const warningMessage = document.getElementById("warning-message");
+  const selectedOption = $('.btn-outline-secondary.active');
+  const warningMessage = $('#warning-message');
 
-  if (!selectedOption) {
-    warningMessage.style.display = "block";
+  if (selectedOption.length === 0) {
+    warningMessage.show();
     return;
   }
 
-  warningMessage.style.display = "none";
-  const userAnswer = selectedOption.textContent;
+  warningMessage.hide();
+  const userAnswer = selectedOption.text();
 
   // Periksa jawaban
   if (userAnswer === questions[currentQuestionIndex].answer) {
-    console.log("Jawaban benar!");
+    console.log('Jawaban benar!');
   } else {
-    console.log("Jawaban salah!");
+    console.log('Jawaban salah!');
   }
 
   // Hapus kelas 'active' dari jawaban yang dipilih
-  selectedOption.classList.remove("active");
+  selectedOption.removeClass('active');
 
-  // Tampilkan soal berikutnya jika ada
+  // Tampilkan soal berikutnya 
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
     loadQuestion(currentQuestionIndex); // Muat soal berikutnya
   } else {
-    alert("Kuis selesai!"); // Tampilkan pesan jika kuis selesai
+    alert('Kuis selesai!'); // Tampilkan pesan jika kuis selesai
+
   }
 }
-// Inisialisasi soal pertama
-loadQuestion(currentQuestionIndex);
+
+$(document).ready(function () {
+  loadQuestion(currentQuestionIndex); // Inisialisasi soal pertama
+  $('.btn-outline-secondary').on('click', selectAnswer); // Event klik jawaban
+  $('#next-button').on('click', nextQuestion); // Event tombol lanjut
+});
