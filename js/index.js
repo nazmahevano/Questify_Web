@@ -1,15 +1,15 @@
-// Toggle untuk menampilkan/menyembunyikan paragraf di bawah h2
-document
-  .getElementById("toggleFeatures")
-  .addEventListener("click", function () {
-    var content = document.getElementById("content");
-    var arrow = document.getElementById("arrow");
+$(document).ready(function () {
+  
+  $('#toggleFeatures').click(function () {
+    var content = $('#content'); // Paragraf di bawah h2
+    var arrow = $('#arrow'); // Panah di samping h2
 
-    if (content.style.display === "none") {
-      content.style.display = "block"; // Menampilkan konten (paragraf)
-      arrow.innerHTML = "&#9650;"; // Mengubah panah ke atas
+    if (content.is(':hidden')) {
+      content.slideDown(); // Tampilkan paragraf dengan animasi
+      arrow.html('&#9650;'); // Ganti panah ke atas
     } else {
-      content.style.display = "none"; // Menyembunyikan konten
-      arrow.innerHTML = "&#9660;"; // Mengubah panah ke bawah
+      content.slideUp(); // Sembunyikan paragraf dengan animasi
+      arrow.html('&#9660;'); // Ganti panah ke bawah
     }
   });
+});
