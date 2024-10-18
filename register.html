@@ -9,8 +9,42 @@
     <title>Register Page</title>
 </head>    
 <body>
+    <!-- Header dan Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navbar-custom">
+            <div class="container-fluid">
+                <!-- Logo dan Nama Questify -->
+                <a class="navbar-brand d-flex align-items-center text-dongker" href="#">
+                    Questify
+                    <img src="assets/images/arcticons--flixquest.png" 
+                    alt="logo" class="logo ms-2" style="width: 30px; height: 30px;">
+                </a>
+
+                <!-- Tombol toggle untuk tampilan mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigasi link di tengah -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav text-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Bahasa untuk tampilan desktop -->
+                <div class="d-none d-lg-flex align-items-center">
+                    <img src="assets/images/world-map.png" alt="language" class="language-icon me-2" style="width: 20px;">
+                    <span class="text-dongker">English</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <!-- Main content -->
-    <main class="container vh-100 d-flex justify-content-center align-items-center">
+    <main class="container vh-100 d-flex justify-content-center align-items-center mt-5 pt-5">
         <section class="row w-100 shadow-lg mx-auto" style="max-width: 900px; height: 600px;">
             <!-- Image section -->
             <div class="col-md-6 d-none d-md-block p-0">
