@@ -1,7 +1,7 @@
 /* CSS Global untuk font */
 .body {
   margin: 5px;
-  font-family: 'Jost', sans-serif; /* Diterapkan secara global */
+  font-family: 'Jost', sans-serif;
 }
 
 
@@ -528,14 +528,14 @@ textarea.form-control {
 button.btn {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: white;
-  border: 1px solid black;
+  background-color: rgb(224, 109, 244);
+  border: 1px solid rgb(247, 26, 221);
   font-size: 18px; /* Teks lebih besar */
   transition: background-color 0.3s ease;
 }
 
 button.btn:hover {
-  background-color: #ddd;
+  background-color: rgb(234, 162, 247);
 }
 
 
