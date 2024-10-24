@@ -3,6 +3,9 @@
   margin: 5px;
   font-family: 'Jost', sans-serif;
 }
+section {
+  scroll-margin-top: 80px; /* Sesuaikan dengan tinggi navbar */
+}
 
 
 /* Menu Styling */
