@@ -13,24 +13,25 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navbar-custom">
             <div class="container-fluid">
                 <!-- Logo dan Nama Questify -->
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand d-flex align-items-center text-dongker" href="#">
                     Questify
-                    <img src="assets/images/arcticons--flixquest.png" alt="logo" class="ms-2" style="width: 30px; height: 30px;">
-                </a> 
+                    <img src="assets/images/arcticons--flixquest.png" 
+                    alt="logo" class="logo ms-2" style="width: 30px; height: 30px;">
+                </a>
 
                 <!-- Tombol toggle untuk tampilan mobile -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                 <!-- Menu Navbar Tengah -->
-                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item mx-3">
-                                <a class="nav-link" href="index.html">Home</a>
-                              </li>
-                                 </ul>
-                                </div>
+                <!-- Navigasi link di tengah -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav text-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                    </ul>
+                </div>
 
                 <!-- Bahasa untuk tampilan desktop -->
                 <div class="d-none d-lg-flex align-items-center">
@@ -51,12 +52,17 @@
             </div>
             
             <!-- Registration form -->
-            <div class="col-md-6 bg-white p-4 d-flex flex-column justify-content-center">
+            <div class="col-md-6 bg-white p-4">
                 <h2 class="text-center mb-4">Halo, Selamat Datang di Questify</h2>
                 <form>
-                    <div class="name-fields mb-3">
-                        <input type="text" class="form-control" placeholder="Nama Depan" required>
-                        <input type="text" class="form-control" placeholder="Nama Belakang" required>
+                    <!-- Name fields wrapped in row for better layout -->
+                    <div class="row g-2 mb-3">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Nama Depan" required>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Nama Belakang" required>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <input type="email" class="form-control" placeholder="Alamat Email" required>
