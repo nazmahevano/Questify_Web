@@ -102,6 +102,8 @@ form a:hover {
     box-sizing: border-box;
     z-index: 1000;
     font-weight: bold;
+    padding-left: 2rem; /* Padding kiri */
+    padding-right: 2rem; /* Padding kanan */
 }
 
 /* Style untuk logo text dan link di navbar */

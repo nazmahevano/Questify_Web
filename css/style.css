@@ -23,6 +23,8 @@ body {
     box-sizing: border-box;
     z-index: 1000;
     font-weight: bold;
+    padding-left: 2rem; /* Padding kiri */
+    padding-right: 2rem; /* Padding kanan */
   }
   
   .navbar a {
