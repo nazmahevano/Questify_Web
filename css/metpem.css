@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f0ff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-main {
+    flex-grow: 1;
+    padding: 50px;
+    margin-top: 80px; /* Memberikan jarak dari navbar */
+    margin-bottom: 50px; /* Memberikan jarak ke footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-main {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 1000px; /* Membatasi lebar maksimal */
+}
+
+h1 {
+    font-size: 32px; /* Meningkatkan ukuran font judul */
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+.payment-methods {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px; /* Memberikan jarak antar metode pembayaran */
+    margin-top: 30px;
+    flex-wrap: wrap; /* Agar responsif di layar kecil */
+}
+
+.method {
+    cursor: pointer;
+    padding: 25px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.method:hover {
+    border-color: #007bff;
+    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.3);
+}
+
+.method img {
+    max-width: 100px;
+    height: auto;
+}
+
+.steps-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; /* Jarak di bawah langkah-langkah */
+    margin-top: 60px;
+  }
+  
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px; /* Jarak antara lingkaran dan teks di bawahnya */
+  }
+  
+  .step-circle.active {
+    background-color:#007bff; /* Warna untuk lingkaran aktif */
+    color: white;
+  }
+  
+  .step-line {
+    align-self: center;  /* Memastikan garis berada di tengah vertikal */
+    width: 100px; /* Panjang garis di antara lingkaran */
+    height: 2px;
+    background-color: #3498db; /* Warna biru untuk garis */
+    margin: 0 20px; /* Jarak horizontal di sekitar garis */
+  }  
+  
+  .step-text {
+    margin-top: 8px; /* Jarak antara lingkaran dan teks */
+    font-size: 14px;
+    color: #333;
+  }
+
+button {
+    margin-top: 30px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
