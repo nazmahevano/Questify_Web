@@ -81,11 +81,11 @@
     font-size: 14px;
 }
 
-/* Header tabel */
 .review-table thead {
-    background-color: #d3e4ff; /* Warna biru muda untuk header */
-    color: #000000; /* Warna teks hitam di header */
+    background-color: #d3a3ff; /* Light purple color for header */
+    color: #000000; /* Black text color in the header */
 }
+
 
 .review-table th {
     padding: 12px;
