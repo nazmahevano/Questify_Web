@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questify Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/homeuser.css" />
+</head>
+  <body class="pt-5"> <!-- Menambahkan pt-5 untuk padding atas -->
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed w-100">
+            <div class="container-fluid">
+                <!-- Logo and Questify Text -->
+                <a class="navbar-brand d-flex align-items-center fs-0 fw-bold" href="#">
+                    Questify
+                    <img src="assets/images/arcticons--flixquest.png" alt="logo" class="ms-2" width="30" height="30" />
+                </a>
+
+                <!-- Toggler for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar items -->
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0">
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="semuakelas.html">Semua Kelas</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="#">Langganan</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="hasilnilai.html">Hasil Nilai</a>
+                        </li>
+                    </ul>
+
+                    <!-- Bahasa and Masuk for desktop view -->
+                    <div class="d-none d-lg-flex align-items-center">
+                        <img src="assets/images/world-map.png" alt="language" class="language-icon" style="width: 20px"/>
+                        <span class="me-3">English</span>
+                        <a href="userprofile.html">
+                            <img src="assets/images/profil.png" alt="profile" class="profile-pic"/>
+                        </a>
+                    </div>
+
+                    <!-- Dropdown for mobile view -->
+                    <ul class="navbar-nav d-lg-none">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Lainnya
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Bahasa</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li>
+                                    <a class="dropdown-item btn btn-outline-primary" href="userprofile.html">Profile</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Container for Sidebar and Main Content -->
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-12 col-md-3 bg-white shadow-sm p-4">
+                <ul class="nav flex-column">
+                    <li class="nav-item px-3 mb-2">
+                        <button class="sidebar-btn nav-link text-start">
+                            <img src="assets/images/statistik.png" alt="User Profile Icon" class="sidebar-icon" />
+                            <span>User Profile</span>
+                        </button>
+                    </li>
+                    <li class="nav-item px-3 mb-2">
+                        <button class="sidebar-btn nav-link text-start">
+                            <img src="assets/images/statistik.png" alt="Pilih Kelas Icon" class="sidebar-icon" />
+                            <span>Pilih Kelas</span>
+                        </button>
+                    </li>
+                    <li class="nav-item px-3 mb-2">
+                        <button class="sidebar-btn nav-link text-start">
+                            <img src="assets/images/statistik.png" alt="Riwayat Kelas Icon" class="sidebar-icon" />
+                            <span>Riwayat Kelas</span>
+                        </button>
+                    </li>
+                    <li class="nav-item px-3 mb-2">
+                        <button class="sidebar-btn nav-link text-start">
+                            <img src="assets/images/statistik.png" alt="Riwayat Transaksi Icon" class="sidebar-icon" />
+                            <span>Riwayat Transaksi</span>
+                        </button>
+                    </li>
+                    <li class="nav-item px-3 mb-2">
+                        <button class="sidebar-btn nav-link text-start">
+                            <img src="assets/images/statistik.png" alt="Pengaturan Icon" class="sidebar-icon" />
+                            <span>Pengaturan</span>
+                        </button>
+                    </li>
+                    <li class="nav-item px-3">
+                        <button class="sidebar-btn nav-link text-start">
+                            <img src="assets/images/statistik.png" alt="Keluar Icon" class="sidebar-icon" />
+                            <span>Keluar</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-12 col-md-9 p-4">
+                <div class="greeting-wrapper">
+                    <div class="greeting-content">
+                        <h1><span class="typing-text" id="typed-text"></span></h1>
+                        <div class="total-score">
+                            Total Skor: 100
+                        </div>
+                    </div>
+                    <img src="assets/images/tropi.png" alt="Trophy Background" class="trophy-bg fade-in-bottom">
+                    <img src="assets/images/character.png" alt="Character" class="character-img img-fluid fade-in-bottom">
+                </div>                      
+
+                <div class="stats mt-4 d-flex flex-wrap">
+                    <!-- Aktivitas Kelas -->
+                    <div class="activity bg-white p-4 rounded shadow-sm me-3 flex-grow-1 mb-3">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/images/statistik.png" alt="Activity Icon" class="activity-icon">
+                            <h3>Aktivitas Kelas</h3>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-item">
+                                <p class="progress-label">Kelas Basic 1</p>
+                                <div class="progress-bar">
+                                    <div class="fill" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <p class="progress-label">Kelas Basic 3</p>
+                                <div class="progress-bar">
+                                    <div class="fill" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <p class="progress-label">Kelas Intermediate 3</p>
+                                <div class="progress-bar">
+                                    <div class="fill" style="width: 40%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Statistik -->
+                    <div class="statistics bg-white p-4 rounded shadow-sm flex-grow-1 mb-3">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/images/statistik.png" alt="Statistics Icon" class="statistics-icon">
+                            <h3>Statistik</h3>
+                        </div>
+                        <div class="pie-chart text-center mt-3">
+                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                <path class="circle" stroke-dasharray="75, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            </svg>
+                            <div class="percentage-text">75%</div>
+                            <p class="mt-2">Total Kelas Terselesaikan: <span style="color: #FFD700;">7</span></p>
+                        </div>                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Questify. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const typedTextElement = document.getElementById("typed-text");
+        const text = "Halo, Pengguna";  // Teks yang akan diketik
+        let index = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                typedTextElement.textContent += text.charAt(index);  // Menambahkan satu karakter
+                index++;
+                setTimeout(typeText, 100);  // Delay antara karakter (100 ms)
+            }
+        }
+
+        // Mulai animasi mengetik ketika halaman dimuat
+        window.onload = typeText;
+    </script>
+</body>
+</html>
